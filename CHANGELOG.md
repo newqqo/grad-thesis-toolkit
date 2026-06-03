@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.1 - Taiwan Student Workflow
+
+- Added Traditional Chinese README entrypoint.
+- Added Taiwan zero-start writing guide for graduate and professional master's students.
+- Added 12-week professional master's first-draft plan.
+- Added advisor-review workflow for Word/PDF feedback loops.
+- Added competitive positioning notes against LaTeX, Pandoc, Typst, and Word-only templates.
+- Updated default placeholder thesis chapters to Traditional Chinese.
+
 ## 0.1.0 - Public Candidate
 
 - Added placeholder-only thesis source structure.
