@@ -1,0 +1,7 @@
+# Core Python dependencies for the thesis workspace.
+requests>=2.28
+pypdf>=3.9
+python-docx>=1.1
+
+# PDF export is handled by local Microsoft Word through PowerShell COM.
+# No extra Python package is required for scripts/thesis_pdf.py.

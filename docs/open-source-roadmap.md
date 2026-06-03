@@ -1,0 +1,45 @@
+# Open Source Roadmap
+
+This roadmap describes the work needed to make the Graduate Thesis Workflow Toolkit credible as a public open-source project. It uses generic placeholders only and should be updated as maintainers make publication decisions.
+
+## Phase 1: Public Scope
+
+- Define the toolkit audience, supported workflows, and non-goals.
+- Replace private examples with generic fixtures and placeholder documents.
+- Confirm that scripts, docs, and templates do not rely on local absolute paths.
+- Keep the root license current and consistent with `CITATION.cff`.
+- Document what generated outputs should and should not be committed.
+
+## Phase 2: Trust and Safety
+
+- Add a privacy review checklist for new examples and demo materials.
+- Document expected handling for private research content.
+- Add security reporting instructions with a real maintainer contact.
+- Confirm dependency files are current and do not include unnecessary packages.
+- Add a lightweight release checklist for tagged versions.
+
+## Phase 3: Contributor Readiness
+
+- Publish contribution guidelines and issue templates.
+- Add a small public demo that runs on placeholder content.
+- Document setup, verification, and troubleshooting steps.
+- Define maintainer review expectations for pull requests.
+- Add a citation file and basic project metadata.
+
+## Phase 4: Reproducibility
+
+- Provide a minimal sample project with placeholder inputs and expected outputs.
+- Document any required runtime assumptions.
+- Add automated checks for formatting, generated artifacts, and privacy-sensitive strings where practical.
+- Keep generated deliverables separate from reusable source material.
+- Capture known limitations and planned improvements.
+
+## Publication Gate
+
+Before publishing, maintainers should confirm:
+
+- [ ] The repository contains no private writing, data, credentials, or personal identifiers.
+- [ ] All examples are placeholders or approved public samples.
+- [ ] Public documentation explains setup, usage, contribution, security, and citation.
+- [ ] The license is present and documented.
+- [ ] The demo workflow can be completed in a clean environment.

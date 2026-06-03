@@ -1,0 +1,35 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Generated documents
+deliverables/docx/*.docx
+deliverables/pdf/*.pdf
+deliverables/pptx/
+
+# Generated reports and temporary files
+consistency/reports/*
+consistency/exports/
+consistency/logs/
+tmp/
+packages/
+
+# Private source material
+assets/library/files/pdfs/*
+assets/library/inbox/pdfs/*
+assets/data/raw/*
+assets/data/processed/*
+source/front_matter/*.docx
+
+# Keep placeholder docs
+!assets/library/files/pdfs/README.md
+!assets/library/inbox/pdfs/README.md
+!consistency/reports/.gitkeep
+
+# Local/editor files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+

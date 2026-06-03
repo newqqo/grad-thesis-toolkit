@@ -1,0 +1,32 @@
+{
+  "chapters": [
+    {
+      "id": "ch1",
+      "label": "Chapter 1: Introduction"
+    },
+    {
+      "id": "ch2",
+      "label": "Chapter 2: Literature Review"
+    },
+    {
+      "id": "ch3",
+      "label": "Chapter 3: Methodology"
+    },
+    {
+      "id": "ch4",
+      "label": "Chapter 4: Findings"
+    },
+    {
+      "id": "ch5",
+      "label": "Chapter 5: Conclusion"
+    },
+    {
+      "id": "appendices",
+      "label": "Appendices"
+    },
+    {
+      "id": "refs",
+      "label": "References"
+    }
+  ]
+}

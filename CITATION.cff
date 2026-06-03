@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If this toolkit supports your work, please cite it using the metadata below."
+title: "Graduate Thesis Workflow Toolkit"
+type: software
+authors:
+  - family-names: "Project Maintainers"
+    given-names: "Graduate Thesis Workflow Toolkit"
+abstract: "A reusable workflow toolkit for organizing graduate thesis writing, review, documentation, and reproducibility tasks with placeholder-first public examples."
+version: "0.1.0"
+repository-code: "https://github.com/newqqo/grad-thesis-toolkit"
+url: "https://github.com/newqqo/grad-thesis-toolkit"
+license: "MIT"
+keywords:
+  - "graduate education"
+  - "research workflow"
+  - "reproducibility"
+  - "documentation"
+  - "open source"
