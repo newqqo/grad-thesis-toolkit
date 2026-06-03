@@ -1,5 +1,5 @@
-# References
+# 參考文獻
 
 ## p951
 
-Add references here, or replace this file with the citation workflow used by your department.
+請在這裡放入參考文獻，或改用你的系所要求的引用工作流。

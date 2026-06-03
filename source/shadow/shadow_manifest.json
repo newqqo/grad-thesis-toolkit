@@ -2,31 +2,31 @@
   "chapters": [
     {
       "id": "ch1",
-      "label": "Chapter 1: Introduction"
+      "label": "第 1 章 緒論"
     },
     {
       "id": "ch2",
-      "label": "Chapter 2: Literature Review"
+      "label": "第 2 章 文獻回顧"
     },
     {
       "id": "ch3",
-      "label": "Chapter 3: Methodology"
+      "label": "第 3 章 研究方法"
     },
     {
       "id": "ch4",
-      "label": "Chapter 4: Findings"
+      "label": "第 4 章 研究結果與分析"
     },
     {
       "id": "ch5",
-      "label": "Chapter 5: Conclusion"
+      "label": "第 5 章 結論與建議"
     },
     {
       "id": "appendices",
-      "label": "Appendices"
+      "label": "附錄"
     },
     {
       "id": "refs",
-      "label": "References"
+      "label": "參考文獻"
     }
   ]
 }

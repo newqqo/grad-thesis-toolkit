@@ -11,8 +11,7 @@ Supported directives:
 
 Starter rules:
 
-:::page-break-before match="^Chapter [1-5]:"
-:::page-break-before match="^Appendices$"
+:::page-break-before match="^(Chapter [1-5]:|第\s*[1-5一二三四五]\s*章)"
+:::page-break-before match="^(Appendices|附錄)$"
 
 Add project-specific figure and style rules after your chapter structure is stable.
-

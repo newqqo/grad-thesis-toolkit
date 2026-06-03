@@ -8,13 +8,15 @@ Graduate Thesis Workflow Toolkit
 
 ## Short Description
 
-A DOCX-first graduate thesis workflow toolkit that lets students write thesis chapters in plain Markdown, render Word deliverables, run consistency checks, and keep AI-assisted revisions auditable through stable paragraph IDs and reusable rules.
+A DOCX-first graduate thesis workflow toolkit for Taiwan students, especially professional master's students starting from zero. It lets students write thesis chapters in plain Markdown, render Word deliverables, run consistency checks, and keep AI-assisted revisions auditable through stable paragraph IDs and reusable rules.
 
 ## Problem
 
 Graduate students often work across Markdown notes, Word drafts, advisor feedback, reference files, generated figures, and final DOCX/PDF deliverables. Existing open templates are strong in LaTeX, Typst, Pandoc, and Quarto, but many students still need a Word-centered workflow because their department, advisor, or committee reviews in DOCX.
 
 The missing layer is not only formatting. Students need a repeatable workspace that separates source from generated files, prevents accidental publication of private material, and makes AI edits traceable instead of opaque.
+
+For Taiwan professional master's students, the starting problem is often earlier than formatting: turning work experience into a researchable topic, building chapter structure, keeping advisor feedback organized, and producing a reviewable Word draft while working full time.
 
 ## Proposed Solution
 
@@ -23,6 +25,8 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 - Markdown chapter source under stable paragraph IDs
 - DOCX rendering through a generated thin Word template
 - consistency rules for chapter responsibilities, canonical terms, and writing style
+- Traditional Chinese onboarding for Taiwan zero-start and professional master's workflows
+- advisor-review workflow guidance for Word/PDF feedback loops
 - style and public-readiness checks
 - GitHub Actions smoke testing for placeholder DOCX rendering
 - contribution and security rules that discourage private thesis text, credentials, and personal data from entering the public repo
@@ -30,6 +34,7 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 ## Public Scope
 
 - reusable workflow templates for graduate research writing
+- Taiwan-focused zero-start writing guides in Traditional Chinese
 - placeholder examples that demonstrate structure without private content
 - documentation for setup, contribution, security, citation, and troubleshooting
 - reproducibility checks for local scripts and generated outputs
@@ -44,14 +49,15 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 
 ## Intended Users
 
-- Graduate students who want a reusable thesis workflow structure.
+- Taiwan graduate and professional master's students who need a reusable thesis workflow structure.
+- Students starting from topic uncertainty rather than from an existing LaTeX template.
 - Advisors or lab groups preparing generic onboarding material.
 - Maintainers evaluating workflow automation for academic writing projects.
 - Open-source contributors improving documentation, templates, and reproducibility checks.
 
 ## Project Maturity
 
-The repository is a public candidate at version 0.1.0. The core placeholder workflow runs locally: public readiness check, style scan, consistency audit, DOCX template generation, and DOCX rendering. The next maturity step is publishing a public repository, enabling CI, adding screenshots, and tagging an initial release.
+The repository is a public candidate at version 0.1.0. The core placeholder workflow runs locally and in CI: public readiness check, style scan, consistency audit, DOCX template generation, and DOCX rendering. The next maturity step is collecting feedback from Taiwan students and adding a stronger sample project with screenshots.
 
 ## Risks and Mitigations
 

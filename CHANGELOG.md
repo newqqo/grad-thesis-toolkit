@@ -8,4 +8,4 @@
 - Added style scan, consistency audit, and public-readiness checks.
 - Added GitHub Actions render smoke test.
 - Added contribution, citation, security, roadmap, and issue-template files.
-
+- Added Traditional Chinese onboarding, Taiwan zero-start guidance, professional master's 12-week plan, advisor-review workflow, and competitive positioning notes.

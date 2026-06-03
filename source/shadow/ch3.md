@@ -1,9 +1,9 @@
-# Chapter 3: Methodology
+# 第 3 章 研究方法
 
 ## p201
 
-Replace this placeholder with the research design and data sources.
+請說明研究設計、資料來源與研究對象。
 
 ## p202
 
-Explain methods, validity boundaries, and limitations.
+請說明研究方法、分析流程、效度邊界與限制。

@@ -1,9 +1,9 @@
-# Chapter 2: Literature Review
+# 第 2 章 文獻回顧
 
 ## p101
 
-Replace this placeholder with the literature review and theory framing.
+請整理核心概念、重要理論與既有研究分類。
 
 ## p102
 
-Define key terms and identify the research gap.
+請說明本研究與既有研究的差異，並指出文獻缺口。

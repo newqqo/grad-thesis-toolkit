@@ -1,9 +1,9 @@
-# Chapter 5: Conclusion
+# 第 5 章 結論與建議
 
 ## p401
 
-Replace this placeholder with conclusions and contributions.
+請整理研究結論、實務貢獻與學術貢獻。
 
 ## p402
 
-State limitations and future work.
+請說明研究限制、後續研究方向與實務建議。

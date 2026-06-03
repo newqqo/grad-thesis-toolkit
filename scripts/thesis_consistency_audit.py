@@ -38,7 +38,9 @@ def audit(source: Path, rules: Path) -> str:
     objectives = read_text(rules / "research_objectives_map.md")
 
     lines = ["# Consistency Audit Report", ""]
-    chapter_count = len(re.findall(r"^# Chapter ", text, flags=re.MULTILINE))
+    chapter_count = len(
+        re.findall(r"^# (Chapter |第\s*[0-9一二三四五六七八九十]+\s*章)", text, flags=re.MULTILINE)
+    )
     lines.append(f"- Chapter headings found: {chapter_count}")
 
     terms = extract_terms(canonical)
@@ -72,4 +74,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

@@ -1,9 +1,9 @@
-# Chapter 4: Findings
+# 第 4 章 研究結果與分析
 
 ## p301
 
-Replace this placeholder with analysis, evidence, tables, and figures.
+請放入資料分析、證據、表格與圖示。
 
 ## p302
 
-Summarize chapter-level findings.
+請整理本章主要發現，並回扣研究問題。

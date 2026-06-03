@@ -6,6 +6,8 @@ A clean, reusable workspace for writing, checking, rendering, and packaging a gr
 
 This repository is a public-template candidate. It intentionally contains workflow code and placeholder content only. Personal thesis text, research data, generated deliverables, and private literature PDFs should stay outside the public repository.
 
+繁體中文入口: [README.zh-TW.md](README.zh-TW.md)
+
 ## Why This Exists
 
 Most strong thesis repositories are LaTeX, Typst, Pandoc, Quarto, or university-specific templates. This project has a narrower goal: help graduate students who must eventually submit or revise in Microsoft Word, while still keeping the thesis source in plain text and giving AI assistants stable rules for safe editing.
@@ -18,6 +20,8 @@ The differentiator is not typography alone. It is the workflow around a thesis:
 - local consistency rules for terms, chapter responsibilities, and writing boundaries
 - style scans for weak academic phrasing and process placeholders
 - public-safety defaults that keep private drafts, PDFs, and generated files out of git
+
+For Taiwan students, especially working professional master's students starting from zero, the project is positioned as a writing workflow rather than a school-format template. Existing Taiwan thesis templates are strong for LaTeX and institutional formatting. This toolkit focuses on getting from topic uncertainty to a reviewable Word draft with traceable revision loops.
 
 ## What This Toolkit Is For
 
@@ -72,6 +76,10 @@ grad-thesis-toolkit/
 
 ## Project Docs
 
+- [台灣碩專班從 0 開始指南](docs/taiwan-zero-start-guide.md)
+- [12 週初稿衝刺計畫](docs/professional-master-12-week-plan.md)
+- [指導教授回饋循環](docs/advisor-review-workflow.md)
+- [Competitive positioning](docs/competitive-positioning.md)
 - [Demo guide](docs/demo.md)
 - [Troubleshooting](docs/troubleshooting.md)
 - [Open-source roadmap](docs/open-source-roadmap.md)

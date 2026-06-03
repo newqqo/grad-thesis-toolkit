@@ -1,9 +1,9 @@
-# Chapter 1: Introduction
+# 第 1 章 緒論
 
 ## p001
 
-Replace this placeholder with the research background and motivation.
+請先寫下研究背景與動機：你的實務問題是什麼、影響誰、為什麼值得研究。
 
 ## p002
 
-State the problem, research questions, scope, and thesis structure.
+請明確寫出研究問題、研究目的、研究範圍與本論文架構。
