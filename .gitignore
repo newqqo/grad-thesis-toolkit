@@ -16,6 +16,11 @@ consistency/logs/
 tmp/
 packages/
 
+# Generated literature workspaces (a student's own topic may hold private
+# notes). Keep the bundled PSC example that ships as a public demo.
+literature/*/
+!literature/psc/
+
 # Private source material
 assets/library/files/pdfs/*
 assets/library/inbox/pdfs/*
