@@ -32,6 +32,15 @@ python scripts/manuscript_concept_audit.py all --source examples/concept-drift-s
 - `consistency/reports/concept_hierarchy_report.md`
 - `consistency/reports/promise_delivery_report.md`
 
+可用 `--output` 或 `--output-dir` 改變輸出位置：
+
+```powershell
+python scripts/manuscript_concept_audit.py concept-tree --source source/shadow --output consistency/reports/my_concept_tree.md
+python scripts/manuscript_concept_audit.py all --source source/shadow --output-dir consistency/reports/final_review
+```
+
+`consistency/reports/` 是生成報告區，不應放入私人原始文稿、未公開資料或含有個資的內容。公開 repo 預設只保留 `.gitkeep`。
+
 ## 能力 1: 核心概念階層樹
 
 使用這段 prompt 搭配報告與完整文稿：

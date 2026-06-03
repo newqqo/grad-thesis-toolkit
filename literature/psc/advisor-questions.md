@@ -1,28 +1,28 @@
-# Advisor Questions
+# 指導教授討論問題 Advisor Questions
 
-Use this before meeting your advisor about `PSC`.
+在跟指導教授討論 `PSC` 前，先填這一頁。
 
-## What I Know
+## 我目前知道什麼
 
-- My broad topic is:
-- The strongest seed papers so far are:
-- The main clusters I see are:
-- The most promising gap is:
+- 我的原始題目是：
+- 目前最重要的種子文獻是：
+- 我看到的主要研究群集是：
+- 最有可能的缺口是：
 
-## What I Need The Advisor To Decide
+## 需要老師幫忙判斷
 
-1. Is this topic suitable for a master's thesis?
-2. Which direction is too broad or too shallow?
-3. What method would be acceptable in this department?
-4. What data source would be credible enough?
-5. Which literature cluster must be read first?
+1. 這個題目是否適合碩士論文？
+2. 哪個方向太大或太淺？
+3. 系上可接受的方法是什麼？
+4. 哪種資料來源才有足夠可信度？
+5. 哪一群文獻必須先讀？
 
-## Meeting Output
+## 會議後記錄
 
-After the meeting, write:
+跟老師討論後，填寫：
 
-- approved direction:
-- rejected directions:
-- next 3 papers to read:
-- next data source to verify:
-- next draft section to write:
+- 通過方向：
+- 暫時排除方向：
+- 接下來要讀的 3 篇文獻：
+- 接下來要確認的資料來源：
+- 接下來要寫的章節或段落：

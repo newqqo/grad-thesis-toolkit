@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.5 - First-Use Student Routing Refinements
+
+- Added first-use student-stage routing for no-topic, vague-direction, partial-draft, and near-final thesis users.
+- Added zero-topic onboarding and a first-use simulation report based on four simulated student journeys.
+- Added Claude and Gemini final-review commands for near-final oral-defense risk review.
+- Updated Codex and Antigravity skill adapters to load the student-stage router before substantive work.
+- Improved literature-map templates with Traditional Chinese-first wording for Taiwan students.
+- Added a non-PSC AI teaching first-use sample to show the workflow beyond maritime topics.
+- Clarified citation-candidate extraction, literature registry sync, report output paths, and DOCX format limitations.
+
 ## 0.1.4 - Cross-Agent Thesis Workflow Adapters
 
 - Added shared agent workflow core and command map.

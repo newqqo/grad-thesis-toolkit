@@ -20,6 +20,29 @@ python scripts/extract_citation_candidates.py --input path/to/outline.docx --out
 
 這只會抓疑似引用，不會驗證真偽。
 
+## Citation Verification Gate
+
+`extract_citation_candidates.py` 只做「候選擷取」。它不能證明文獻存在，也不能證明作者、年份、標題、期刊、DOI 或頁碼正確。
+
+建議把引用分成四種狀態：
+
+| 狀態 | 意義 | 可以做什麼 |
+| --- | --- | --- |
+| candidate | 文稿中看起來像引用 | 暫時列入查證清單 |
+| registered | 已放進本地 literature registry | 可追蹤使用位置，但仍不等於真實驗證 |
+| source-checked | 已對照原文或可信資料庫 | 可進入文獻回顧草稿 |
+| rejected | 找不到、年份不符、標題不符或來源不可靠 | 刪除或改寫相關論述 |
+
+如果使用本地文獻登錄功能，可以接著跑：
+
+```powershell
+python scripts/thesis_library.py scan-thesis-all
+python scripts/thesis_library.py audit-refs-sync
+python scripts/thesis_library.py render-reports
+```
+
+這些命令可以檢查 `source/shadow/refs.md` 與 registry 的同步狀態，但仍不是 DOI 或資料庫真偽查證。真正查證應至少比對 DOI、標題、作者、年份、出版來源，以及文稿中使用的主張是否能被原文支持。
+
 ## Step 2: Select A Review Mode
 
 如果有疑似引用：

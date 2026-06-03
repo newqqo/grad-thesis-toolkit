@@ -11,8 +11,10 @@ That skill points to the shared thesis-agent core under `agents/shared/`. It is 
 Use it for:
 
 - vague topic to literature map
+- first-use routing by student stage
 - outline intake and citation-candidate review
 - concept hierarchy checks
 - theoretical promise-delivery checks
+- near-final oral-defense review
 - advisor review loops
 - DOCX-first thesis workflow tasks

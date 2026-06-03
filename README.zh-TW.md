@@ -24,18 +24,39 @@
 
 ## 從 0 開始怎麼用
 
+第一次使用，不要先跑所有指令。先判斷你現在是哪一種狀態：
+
+| 你現在的狀態 | 先做什麼 |
+| --- | --- |
+| 完全還沒題目 | 讀 [完全還沒題目：先從這裡開始](docs/start-here-zero-topic.zh-TW.md)，先讓 agent 問你問題。 |
+| 只有模糊方向 | 讀 [第一次使用分流](docs/first-use-by-stage.md)，再建立文獻地圖。 |
+| 已經寫到一半 | 先做引用候選、概念階層、理論承諾檢查，不要全文改寫。 |
+| 接近完稿 | 走口試前嚴格審查：概念、引用、結論、DOCX readiness。 |
+
+AI 安全模式：
+
+- 不編文獻。
+- 不假裝 DOI 或資料已驗證。
+- 不一開始就全文改寫。
+- 所有引用先標成未驗證候選。
+- 重要判斷必須附原句或章節證據。
+
 先讀：
 
-1. [台灣碩專班從 0 開始指南](docs/taiwan-zero-start-guide.md)
-2. [從模糊題目到文獻地圖](docs/vague-topic-to-literature-map.md)
-3. [AI 研究夥伴 Playbook](docs/research-partner-playbook.md)
-4. [大綱匯入流程](docs/outline-intake-workflow.md)
-5. [概念階層與理論交付檢查](docs/concept-hierarchy-and-promise-check.md)
-6. [Agent adapter strategy](docs/agent-adapter-strategy.md)
-7. [台灣碩專班最小樣本](examples/tw-professional-master/README.md)
-8. [12 週初稿衝刺計畫](docs/professional-master-12-week-plan.md)
-9. [指導教授回饋循環](docs/advisor-review-workflow.md)
-10. [隱私審查 checklist](docs/privacy-review-checklist.md)
+1. [第一次使用分流](docs/first-use-by-stage.md)
+2. [完全還沒題目：先從這裡開始](docs/start-here-zero-topic.zh-TW.md)
+3. [台灣碩專班從 0 開始指南](docs/taiwan-zero-start-guide.md)
+4. [從模糊題目到文獻地圖](docs/vague-topic-to-literature-map.md)
+5. [AI 研究夥伴 Playbook](docs/research-partner-playbook.md)
+6. [大綱匯入流程](docs/outline-intake-workflow.md)
+7. [概念階層與理論交付檢查](docs/concept-hierarchy-and-promise-check.md)
+8. [Agent adapter strategy](docs/agent-adapter-strategy.md)
+9. [台灣碩專班最小樣本](examples/tw-professional-master/README.md)
+10. [AI 教學 first-use 範例](examples/ai-teaching-first-use/README.md)
+11. [學生首次使用模擬報告](docs/user-simulation-report.md)
+12. [12 週初稿衝刺計畫](docs/professional-master-12-week-plan.md)
+13. [指導教授回饋循環](docs/advisor-review-workflow.md)
+14. [隱私審查 checklist](docs/privacy-review-checklist.md)
 
 如果你現在只知道一個關鍵字，例如 `PSC`，先不要急著寫第 1 章。先建立文獻地圖工作區：
 
@@ -46,6 +67,7 @@ python scripts/init_literature_map.py --topic "PSC" --domain-hint "port state co
 再看示例：
 
 - [PSC 文獻地圖示例](docs/psc-literature-map-example.md)
+- [AI 教學 first-use 範例](examples/ai-teaching-first-use/README.md)
 
 如果你已經有一份大綱，先不要急著讓 AI 全文改寫。先抓出大綱裡可能需要查證的引用：
 
@@ -55,11 +77,13 @@ python scripts/extract_citation_candidates.py --input examples/outline-with-cita
 
 接著依 [大綱匯入流程](docs/outline-intake-workflow.md) 決定下一步：先查證引用、做結構壓力測試、補文獻地圖，或把其中一節拆成可寫作任務。
 
-如果你已經有第 1、2、4、5 章草稿，可以檢查概念位階與理論承諾是否真的交付：
+如果你已經有第 1-5 章草稿，可以檢查概念位階與理論承諾是否真的交付：
 
 ```powershell
 python scripts/manuscript_concept_audit.py all --source source/shadow
 ```
+
+如果你已經接近完稿，請讓 agent 依 [第一次使用分流](docs/first-use-by-stage.md) 的 D 路徑輸出「必修、建議修、可不修、可答辯處理」四類，而不是只看 demo 報告。
 
 然後修改：
 
@@ -101,6 +125,8 @@ python scripts/run_demo.py
 ```text
 deliverables/docx/thesis_render_v2_latest.docx
 ```
+
+這個 DOCX 是 toolkit 產物，不等於學校格式已通過。正式提交前仍要檢查封面、摘要、目錄、頁碼、系所規定與 PDF 匯出。
 
 ## 重要提醒
 

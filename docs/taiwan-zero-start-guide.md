@@ -14,7 +14,9 @@
 
 ## 第一步：把題目拆成 5 句話
 
-在 `source/shadow/ch1.md` 的 `p001` 前，先用草稿寫下：
+如果你連題目都還沒有，先不要改 `source/shadow/ch1.md`，也不要急著補 `p001`。先使用 [還沒有題目的入口指南](start-here-zero-topic.zh-TW.md) 或 `agents/shared/student-stage-router.md`，把想法整理成一頁 topic brief。
+
+當方向已經比「我不知道要寫什麼」更清楚後，再在 `source/shadow/ch1.md` 的 `p001` 前，用草稿寫下：
 
 - 我工作或觀察到的問題是什麼？
 - 這個問題影響誰？
@@ -78,4 +80,3 @@
 - `幫我把第 4 章結果寫出來。`
 
 AI 適合整理、檢查、改寫與找漏洞，不適合替你創造不存在的資料。
-

@@ -24,64 +24,64 @@ def write_once(path: Path, content: str, overwrite: bool) -> None:
 
 
 def topic_brief(topic: str, domain_hint: str) -> str:
-    return f"""# Topic Brief
+    return f"""# 題目釐清卡 Topic Brief
 
-## Raw Topic
+## 原始關鍵字
 
 {topic}
 
-## Domain Hint
+## 領域提示
 
-{domain_hint or "Not specified yet."}
+{domain_hint or "尚未指定。"}
 
-## Five-Sentence Clarification
+## 五句話釐清
 
-1. I am interested in this topic because:
-2. The practical problem I observe is:
-3. The people, organizations, or systems affected are:
-4. The evidence or data I might be able to access are:
-5. The thesis-level question I might answer is:
+1. 我對這個題目有興趣，因為：
+2. 我觀察到的實務問題是：
+3. 受到影響的人、組織或系統是：
+4. 我可能取得的資料或證據是：
+5. 我這篇論文可能回答的問題是：
 
-## Topic Narrowing
+## 題目收斂表
 
-| Layer | Working Answer |
+| 層次 | 暫定答案 |
 | --- | --- |
-| Broad keyword | {topic} |
-| Practical context | |
-| Academic field | |
-| Main concept | |
-| Possible outcome variable | |
-| Possible method | |
-| Feasible data source | |
+| 原始關鍵字 | {topic} |
+| 實務脈絡 | |
+| 學術領域 | |
+| 核心概念 | |
+| 可能結果變項或分析對象 | |
+| 可能方法 | |
+| 可取得資料來源 | |
 
-## Advisor Check
+## 見老師前檢查
 
-- Is this topic too broad?
-- Is there a real data source?
-- Is this a thesis question, or only a work complaint?
-- Which chapter would this topic be hardest to write?
+- 這個題目是否太大？
+- 是否真的有資料來源？
+- 這是可研究的論文問題，還只是工作抱怨？
+- 這個題目最難寫的是哪一章？
 """
 
 
 def search_plan(topic: str) -> str:
-    return f"""# Search Plan
+    return f"""# 文獻搜尋計畫 Search Plan
 
-## Goal
+## 目標
 
-Turn the vague topic `{topic}` into a defensible literature map.
+把模糊關鍵字 `{topic}` 變成可以跟指導教授討論的文獻地圖。
 
-## Step 1: Semantic Search For Seed Papers
+## Step 1: 先找種子文獻 Seed Papers
 
-Use 2-3 tools or databases, not just one.
+不要只用一個工具。建議至少用 2-3 種搜尋來源互相補盲點。
 
-Suggested options:
+可用來源：
 
-- Google Scholar / university library database
-- Elicit or another semantic-search tool
-- SciSpace or another paper-reading tool
-- Scopus / Web of Science if your school provides access
+- Google Scholar / 學校圖書館資料庫
+- Elicit 或其他語意搜尋工具
+- SciSpace 或其他論文閱讀工具
+- Scopus / Web of Science，如果學校有訂閱
 
-Starter query patterns:
+起始搜尋語：
 
 - `{topic} literature review`
 - `{topic} systematic review`
@@ -91,74 +91,74 @@ Starter query patterns:
 - `{topic} Taiwan`
 - `{topic} Asia`
 
-## Step 2: Record Seed Papers
+## Step 2: 記錄種子文獻
 
-Pick 5-10 papers that look central. Do not trust AI summaries yet. Record them in `seed-papers.md`.
+挑 5-10 篇看起來像核心起點的文獻。先不要相信 AI 摘要，先把它們記到 `seed-papers.md`。
 
-## Step 3: Citation Expansion
+## Step 3: 引文擴張 Citation Expansion
 
-Use at least one citation-map tool when possible:
+如果可以，至少用一個引用地圖工具：
 
 - Litmaps
 - ResearchRabbit
 - Connected Papers
 
-Expansion targets:
+擴張目標：
 
-- older foundational papers
-- newer papers citing the seed papers
-- review papers
-- papers using different methods
-- papers from Taiwan or nearby contexts
+- 較早的基礎文獻
+- 引用種子文獻的新文獻
+- 綜述型文獻
+- 使用不同方法的文獻
+- 台灣或鄰近脈絡的文獻
 
-## Step 4: Matrix Extraction
+## Step 4: 建立文獻矩陣
 
-Fill `literature-matrix.csv`. The minimum useful columns are:
+填寫 `literature-matrix.csv`。最低限度要能回答這些欄位：
 
-- citation
-- year
-- country_or_region
-- topic_cluster
-- theory_or_framework
-- method
-- data_source
-- key_findings
-- limitations
-- gap_claim
-- relevance_to_my_thesis
-- verification_status
+- citation：引用資訊
+- year：年份
+- country_or_region：國家或區域
+- topic_cluster：研究群集
+- theory_or_framework：理論或框架
+- method：方法
+- data_source：資料來源
+- key_findings：主要發現
+- limitations：限制
+- gap_claim：作者宣稱的缺口
+- relevance_to_my_thesis：跟我論文的關係
+- verification_status：是否已對照原文
 
-## Step 5: Gap Radar
+## Step 5: 缺口雷達 Gap Radar
 
-Use `gap-radar.md` to classify gaps:
+用 `gap-radar.md` 分類可能缺口：
 
-- context gap
-- method gap
-- data gap
-- theory gap
-- practical implementation gap
-- Taiwan/localization gap
+- 脈絡缺口 context gap
+- 方法缺口 method gap
+- 資料缺口 data gap
+- 理論缺口 theory gap
+- 實務落地缺口 practical implementation gap
+- 台灣或在地化缺口 Taiwan/localization gap
 
-## Rule
+## 安全規則
 
-AI can help search, sort, and summarize. The student must verify claims against source text before writing them into the thesis.
+AI 可以幫忙搜尋、分類與摘要，但任何要寫進論文的主張，都必須回到原文查證。
 """
 
 
 def seed_papers() -> str:
-    return """# Seed Papers
+    return """# 種子文獻 Seed Papers
 
-Add 5-10 seed papers here.
+在這裡放 5-10 篇作為起點的文獻。
 
-| Status | Citation | Why It Is A Seed | Source Link | Verified Source Text? |
+| 狀態 | 引用資訊 | 為何適合作為種子 | 來源連結 | 已對照原文？ |
 | --- | --- | --- | --- | --- |
 | candidate | | | | no |
 
-## Notes
+## 判斷提醒
 
-- A seed paper is not just a paper that mentions the keyword.
-- Prefer review papers, highly cited papers, recent papers, and papers that define the main debate.
-- If two AI/search tools return zero overlap, keep both sets and compare why.
+- 種子文獻不是「有提到關鍵字」就算。
+- 優先選綜述文獻、高引用文獻、近年文獻，以及能定義主要爭論的文獻。
+- 如果兩個 AI 或搜尋工具結果完全不重疊，先保留兩組，再比較差異原因。
 """
 
 
@@ -171,102 +171,102 @@ def literature_matrix() -> str:
 
 
 def gap_radar(topic: str) -> str:
-    return f"""# Gap Radar
+    return f"""# 缺口雷達 Gap Radar
 
-Topic: {topic}
+題目：{topic}
 
-## Current Research Clusters
+## 目前研究群集
 
-| Cluster | Representative Papers | What This Cluster Already Knows | What It Does Not Solve |
+| 群集 | 代表文獻 | 這個群集已知道什麼 | 還沒解決什麼 |
 | --- | --- | --- | --- |
 | | | | |
 
-## Gap Types
+## 缺口類型
 
-| Gap Type | Evidence From Literature | Possible Thesis Angle |
+| 缺口類型 | 文獻證據 | 可能論文角度 |
 | --- | --- | --- |
-| Context gap | | |
-| Taiwan/local gap | | |
-| Method gap | | |
-| Data gap | | |
-| Theory gap | | |
-| Practice gap | | |
+| 脈絡缺口 | | |
+| 台灣／在地缺口 | | |
+| 方法缺口 | | |
+| 資料缺口 | | |
+| 理論缺口 | | |
+| 實務落地缺口 | | |
 
-## Candidate Research Positions
+## 我可以站的位置
 
-1. I can extend existing research to a Taiwan context by:
-2. I can compare methods by:
-3. I can use a different data source by:
-4. I can connect academic literature to practice by:
-5. I should avoid this direction because it is too broad:
+1. 我可以把既有研究延伸到台灣或特定場域，方式是：
+2. 我可以比較不同方法，方式是：
+3. 我可以使用不同資料來源，方式是：
+4. 我可以把學術文獻和實務問題接起來，方式是：
+5. 我應避免的方向是，因為它太大或資料不可得：
 
-## Final Research Question Candidates
+## 候選研究問題
 
-| Candidate | Why It Is Researchable | Required Data | Risk |
+| 候選問題 | 為何可研究 | 需要資料 | 風險 |
 | --- | --- | --- | --- |
 | | | | |
 """
 
 
 def advisor_questions(topic: str) -> str:
-    return f"""# Advisor Questions
+    return f"""# 指導教授討論問題 Advisor Questions
 
-Use this before meeting your advisor about `{topic}`.
+在跟指導教授討論 `{topic}` 前，先填這一頁。
 
-## What I Know
+## 我目前知道什麼
 
-- My broad topic is:
-- The strongest seed papers so far are:
-- The main clusters I see are:
-- The most promising gap is:
+- 我的原始題目是：
+- 目前最重要的種子文獻是：
+- 我看到的主要研究群集是：
+- 最有可能的缺口是：
 
-## What I Need The Advisor To Decide
+## 需要老師幫忙判斷
 
-1. Is this topic suitable for a master's thesis?
-2. Which direction is too broad or too shallow?
-3. What method would be acceptable in this department?
-4. What data source would be credible enough?
-5. Which literature cluster must be read first?
+1. 這個題目是否適合碩士論文？
+2. 哪個方向太大或太淺？
+3. 系上可接受的方法是什麼？
+4. 哪種資料來源才有足夠可信度？
+5. 哪一群文獻必須先讀？
 
-## Meeting Output
+## 會議後記錄
 
-After the meeting, write:
+跟老師討論後，填寫：
 
-- approved direction:
-- rejected directions:
-- next 3 papers to read:
-- next data source to verify:
-- next draft section to write:
+- 通過方向：
+- 暫時排除方向：
+- 接下來要讀的 3 篇文獻：
+- 接下來要確認的資料來源：
+- 接下來要寫的章節或段落：
 """
 
 
 def ai_prompts(topic: str) -> str:
-    return f"""# AI Prompts
+    return f"""# AI 提示詞 AI Prompts
 
-Use these prompts with an AI assistant. Always verify output against original sources.
+可把這些提示詞交給 AI 助手。所有輸出都要回到原文查證。
 
-## Clarify The Topic
+## 釐清題目
 
 ```text
-I only know I want to study "{topic}". Ask me 10 clarification questions, then propose 5 narrower master's thesis topics. For each topic, explain required data, likely method, and risk.
+我目前只知道想研究「{topic}」。請先問我 10 個釐清問題，再提出 5 個較窄的碩士論文方向。每個方向請說明需要資料、可能方法、最大風險，以及見老師前要準備什麼。
 ```
 
-## Build Search Queries
+## 建立搜尋語
 
 ```text
-Create search queries for "{topic}" using English and Traditional Chinese terms. Separate queries into: broad review, recent trend, method, Taiwan/local context, and research gap. Include Boolean query variants.
+請為「{topic}」建立英文與繁體中文搜尋語，分成：綜述文獻、近年趨勢、研究方法、台灣／在地脈絡、研究缺口。請提供 Boolean query 版本。
 ```
 
-## Classify Literature
+## 分類文獻
 
 ```text
-Given this literature matrix, group papers into research clusters. For each cluster, summarize what is already known, what methods dominate, and what gap remains. Do not invent papers.
+請根據這份文獻矩陣，把文獻分成研究群集。每個群集請整理：已知結論、常用方法、仍存在的缺口。不要捏造不存在的文獻。
 ```
 
-## Challenge The Gap
+## 挑戰缺口
 
 ```text
-Act as a strict thesis advisor. Based on this gap radar, tell me which proposed gap is too vague, which one is feasible for a master's thesis, and what data I must collect to defend it.
+請扮演嚴格的指導教授。根據這份 gap radar，指出哪個缺口太模糊、哪個缺口適合碩士論文，以及我必須蒐集哪些資料才能站得住腳。
 ```
 """
 

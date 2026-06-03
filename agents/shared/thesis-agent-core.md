@@ -44,6 +44,8 @@ python scripts/manuscript_concept_audit.py all --source source/shadow --concept 
 
 ## Workflow Modes
 
+For first-time users, read `agents/shared/student-stage-router.md` before selecting a workflow. Route the student by current stage: no topic, vague direction, partial draft, or near final.
+
 ### Vague Topic To Literature Map
 
 Use when the user only has a keyword such as PSC, ESG, AI teaching, service quality, or digital transformation.

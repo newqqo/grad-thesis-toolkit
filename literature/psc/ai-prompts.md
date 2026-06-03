@@ -1,27 +1,27 @@
-# AI Prompts
+# AI 提示詞 AI Prompts
 
-Use these prompts with an AI assistant. Always verify output against original sources.
+可把這些提示詞交給 AI 助手。所有輸出都要回到原文查證。
 
-## Clarify The Topic
+## 釐清題目
 
 ```text
-I only know I want to study "PSC". Ask me 10 clarification questions, then propose 5 narrower master's thesis topics. For each topic, explain required data, likely method, and risk.
+我目前只知道想研究「PSC」。請先問我 10 個釐清問題，再提出 5 個較窄的碩士論文方向。每個方向請說明需要資料、可能方法、最大風險，以及見老師前要準備什麼。
 ```
 
-## Build Search Queries
+## 建立搜尋語
 
 ```text
-Create search queries for "PSC" using English and Traditional Chinese terms. Separate queries into: broad review, recent trend, method, Taiwan/local context, and research gap. Include Boolean query variants.
+請為「PSC」建立英文與繁體中文搜尋語，分成：綜述文獻、近年趨勢、研究方法、台灣／在地脈絡、研究缺口。請提供 Boolean query 版本。
 ```
 
-## Classify Literature
+## 分類文獻
 
 ```text
-Given this literature matrix, group papers into research clusters. For each cluster, summarize what is already known, what methods dominate, and what gap remains. Do not invent papers.
+請根據這份文獻矩陣，把文獻分成研究群集。每個群集請整理：已知結論、常用方法、仍存在的缺口。不要捏造不存在的文獻。
 ```
 
-## Challenge The Gap
+## 挑戰缺口
 
 ```text
-Act as a strict thesis advisor. Based on this gap radar, tell me which proposed gap is too vague, which one is feasible for a master's thesis, and what data I must collect to defend it.
+請扮演嚴格的指導教授。根據這份 gap radar，指出哪個缺口太模糊、哪個缺口適合碩士論文，以及我必須蒐集哪些資料才能站得住腳。
 ```

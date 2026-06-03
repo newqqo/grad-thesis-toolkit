@@ -38,6 +38,7 @@ The intended division is:
 All platforms should reference the same core:
 
 - `agents/shared/thesis-agent-core.md`
+- `agents/shared/student-stage-router.md`
 - `agents/shared/command-map.md`
 
 Platform-specific files should stay small:
@@ -63,6 +64,19 @@ For a vague topic:
 2. Agent treats all literature output as unverified candidates.
 3. Agent asks the student to verify seed papers and data access.
 4. Agent turns the strongest path into advisor questions and chapter tasks.
+
+For a first-time user:
+
+1. Agent reads the student-stage router.
+2. Agent classifies the student as no topic, vague direction, partial draft, near final, or unclear.
+3. If unclear, agent asks only the three router questions.
+4. Agent suggests one first workflow, not every script at once.
+
+For a near-final draft:
+
+1. Agent runs manuscript concept, style, consistency, and public-readiness checks.
+2. Agent separates findings into mandatory fixes, recommended fixes, optional polish, and oral-defense handling.
+3. Agent avoids claiming school-format compliance unless a school template has been checked.
 
 ## Maintenance Rule
 

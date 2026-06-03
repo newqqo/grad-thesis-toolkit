@@ -4,7 +4,7 @@ argument-hint: [source path] [--concept term]
 allowed-tools: Read, Glob, Grep, Bash(python scripts/manuscript_concept_audit.py:*)
 ---
 
-Read `agents/shared/thesis-agent-core.md` and `agents/shared/command-map.md`.
+Read `agents/shared/thesis-agent-core.md`, `agents/shared/student-stage-router.md`, and `agents/shared/command-map.md`.
 
 Task:
 

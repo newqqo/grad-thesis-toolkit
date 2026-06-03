@@ -1,34 +1,34 @@
-# Gap Radar
+# 缺口雷達 Gap Radar
 
-Topic: PSC
+題目：PSC
 
-## Current Research Clusters
+## 目前研究群集
 
-| Cluster | Representative Papers | What This Cluster Already Knows | What It Does Not Solve |
+| 群集 | 代表文獻 | 這個群集已知道什麼 | 還沒解決什麼 |
 | --- | --- | --- | --- |
 | | | | |
 
-## Gap Types
+## 缺口類型
 
-| Gap Type | Evidence From Literature | Possible Thesis Angle |
+| 缺口類型 | 文獻證據 | 可能論文角度 |
 | --- | --- | --- |
-| Context gap | | |
-| Taiwan/local gap | | |
-| Method gap | | |
-| Data gap | | |
-| Theory gap | | |
-| Practice gap | | |
+| 脈絡缺口 | | |
+| 台灣／在地缺口 | | |
+| 方法缺口 | | |
+| 資料缺口 | | |
+| 理論缺口 | | |
+| 實務落地缺口 | | |
 
-## Candidate Research Positions
+## 我可以站的位置
 
-1. I can extend existing research to a Taiwan context by:
-2. I can compare methods by:
-3. I can use a different data source by:
-4. I can connect academic literature to practice by:
-5. I should avoid this direction because it is too broad:
+1. 我可以把既有研究延伸到台灣或特定場域，方式是：
+2. 我可以比較不同方法，方式是：
+3. 我可以使用不同資料來源，方式是：
+4. 我可以把學術文獻和實務問題接起來，方式是：
+5. 我應避免的方向是，因為它太大或資料不可得：
 
-## Final Research Question Candidates
+## 候選研究問題
 
-| Candidate | Why It Is Researchable | Required Data | Risk |
+| 候選問題 | 為何可研究 | 需要資料 | 風險 |
 | --- | --- | --- | --- |
 | | | | |

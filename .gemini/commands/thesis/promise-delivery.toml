@@ -1,6 +1,6 @@
 description = "Check theoretical promise vs actual delivery across thesis chapters."
 prompt = """
-Read @{agents/shared/thesis-agent-core.md} and @{agents/shared/command-map.md}.
+Read @{agents/shared/thesis-agent-core.md}, @{agents/shared/student-stage-router.md}, and @{agents/shared/command-map.md}.
 
 Use the user's arguments as the manuscript source path and optional --concept terms; default to source/shadow.
 

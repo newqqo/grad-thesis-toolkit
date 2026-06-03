@@ -15,17 +15,22 @@ REQUIRED_FILES = [
     "agents/README.md",
     "agents/shared/thesis-agent-core.md",
     "agents/shared/command-map.md",
+    "agents/shared/student-stage-router.md",
     "agents/codex/skills/grad-thesis-agent/SKILL.md",
     ".agents/skills/grad-thesis-agent/SKILL.md",
+    ".claude/commands/thesis/start.md",
     ".claude/commands/thesis/concept-tree.md",
     ".claude/commands/thesis/promise-delivery.md",
     ".claude/commands/thesis/literature-map.md",
     ".claude/commands/thesis/outline-intake.md",
+    ".claude/commands/thesis/final-review.md",
     ".claude/agents/thesis-reviewer.md",
+    ".gemini/commands/thesis/start.toml",
     ".gemini/commands/thesis/concept-tree.toml",
     ".gemini/commands/thesis/promise-delivery.toml",
     ".gemini/commands/thesis/literature-map.toml",
     ".gemini/commands/thesis/outline-intake.toml",
+    ".gemini/commands/thesis/final-review.toml",
 ]
 
 REQUIRED_SHARED_TERMS = [

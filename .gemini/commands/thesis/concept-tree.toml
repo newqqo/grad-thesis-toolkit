@@ -1,6 +1,6 @@
 description = "Build a source-grounded thesis concept hierarchy tree."
 prompt = """
-Read @{agents/shared/thesis-agent-core.md} and @{agents/shared/command-map.md}.
+Read @{agents/shared/thesis-agent-core.md}, @{agents/shared/student-stage-router.md}, and @{agents/shared/command-map.md}.
 
 Use the user's arguments as the manuscript source path; default to source/shadow.
 

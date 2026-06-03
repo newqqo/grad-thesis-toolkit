@@ -28,6 +28,9 @@ This project should therefore avoid claiming broad usage. The stronger argument 
 - Outline citation-candidate extraction before structural rewriting.
 - Concept hierarchy and theoretical promise-delivery checks grounded in manuscript sentences.
 - Cross-agent adapters for Codex, Antigravity, Claude Code, and Gemini CLI-style workflows.
+- First-use stage routing based on simulated no-topic, vague-direction, partial-draft, and near-final student journeys.
+- Near-final oral-defense review commands that separate mandatory fixes from optional polish.
+- Non-PSC AI teaching sample that shows the workflow can generalize beyond maritime topics.
 - Stable paragraph IDs and consistency rules for auditable AI edits.
 - Public-readiness scan that helps prevent accidental exposure of private drafts, PDFs, local paths, and credentials.
 
@@ -55,4 +58,4 @@ Avoid this angle:
 2. Add one short demo recording or GIF.
 3. Collect feedback from at least 3 Taiwan graduate students, advisors, or lab peers.
 4. Add a sample issue showing a student workflow request and how maintainers would handle it.
-5. Add one more non-PSC topic example, such as ESG or AI teaching, to prove the workflow is not maritime-only.
+5. Collect real student or advisor feedback to complement the current simulated first-use report.

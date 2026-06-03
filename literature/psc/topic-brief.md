@@ -1,36 +1,36 @@
-# Topic Brief
+# 題目釐清卡 Topic Brief
 
-## Raw Topic
+## 原始關鍵字
 
 PSC
 
-## Domain Hint
+## 領域提示
 
 port state control / maritime safety
 
-## Five-Sentence Clarification
+## 五句話釐清
 
-1. I am interested in this topic because:
-2. The practical problem I observe is:
-3. The people, organizations, or systems affected are:
-4. The evidence or data I might be able to access are:
-5. The thesis-level question I might answer is:
+1. 我對這個題目有興趣，因為：
+2. 我觀察到的實務問題是：
+3. 受到影響的人、組織或系統是：
+4. 我可能取得的資料或證據是：
+5. 我這篇論文可能回答的問題是：
 
-## Topic Narrowing
+## 題目收斂表
 
-| Layer | Working Answer |
+| 層次 | 暫定答案 |
 | --- | --- |
-| Broad keyword | PSC |
-| Practical context | |
-| Academic field | |
-| Main concept | |
-| Possible outcome variable | |
-| Possible method | |
-| Feasible data source | |
+| 原始關鍵字 | PSC |
+| 實務脈絡 | |
+| 學術領域 | |
+| 核心概念 | |
+| 可能結果變項或分析對象 | |
+| 可能方法 | |
+| 可取得資料來源 | |
 
-## Advisor Check
+## 見老師前檢查
 
-- Is this topic too broad?
-- Is there a real data source?
-- Is this a thesis question, or only a work complaint?
-- Which chapter would this topic be hardest to write?
+- 這個題目是否太大？
+- 是否真的有資料來源？
+- 這是可研究的論文問題，還只是工作抱怨？
+- 這個題目最難寫的是哪一章？

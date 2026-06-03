@@ -35,6 +35,8 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 - a reusable AI research partner playbook and Traditional Chinese prompt template for guided menus, pressure tests, literature mapping, and chapter-level writing tasks
 - concept hierarchy and theoretical promise-delivery checks that use manuscript sentences to detect term drift, unsupported high-level concepts, and chapter-level delivery gaps
 - cross-agent adapters for Codex, Antigravity, Claude Code, and Gemini CLI-style workflows
+- first-use stage routing for no-topic, vague-direction, partial-draft, and near-final students
+- near-final oral-defense review guidance that separates mandatory fixes, recommended fixes, optional polish, and defensible oral-defense handling
 - advisor-review workflow guidance for Word/PDF feedback loops
 - style and public-readiness checks
 - GitHub Actions smoke testing for placeholder DOCX rendering
@@ -50,6 +52,8 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 - concept-audit workflows that help students verify whether chapter 1 concepts are supported, operated, and recovered across the thesis
 - shared agent rules, skills, project-memory files, and command templates for multiple AI coding agents
 - a public-safe Taiwan professional master's mini sample that demonstrates topic narrowing, matrix setup, gap radar, advisor feedback tracking, and chapter tasks
+- a non-PSC AI teaching first-use sample that demonstrates the workflow beyond maritime topics
+- a student-simulation report showing how four first-time user stages shaped the onboarding and adapter design
 - placeholder examples that demonstrate structure without private content
 - documentation for setup, contribution, security, citation, and troubleshooting
 - reproducibility checks for local scripts and generated outputs
@@ -72,7 +76,7 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 
 ## Project Maturity
 
-The repository is a public candidate at version 0.1.4. The core placeholder workflow runs locally and in CI: public readiness check, agent-adapter validation, style scan, consistency audit, concept hierarchy audit, promise-delivery audit, DOCX template generation, DOCX rendering, literature-map initialization, and outline citation-candidate extraction. The next maturity step is collecting feedback from Taiwan students and adding a stronger sample project with screenshots.
+The repository is a public candidate at version 0.1.5. The core placeholder workflow runs locally and in CI: public readiness check, agent-adapter validation, style scan, consistency audit, concept hierarchy audit, promise-delivery audit, DOCX template generation, DOCX rendering, literature-map initialization, and outline citation-candidate extraction. The current iteration adds first-use simulation across four student stages and updates onboarding, agent routing, near-final review commands, and non-PSC examples accordingly. The next maturity step is collecting feedback from real Taiwan students and adding screenshots or a short demo recording.
 
 ## Risks and Mitigations
 
@@ -97,5 +101,5 @@ The repository is a public candidate at version 0.1.4. The core placeholder work
 
 - Repository URL: `https://github.com/newqqo/grad-thesis-toolkit`
 - License: MIT
-- Current release: 0.1.4 cross-agent thesis workflow adapters
+- Current release: 0.1.5 first-use student routing refinements
 - Public demo: `python scripts/run_demo.py`

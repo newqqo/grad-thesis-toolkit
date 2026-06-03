@@ -1,0 +1,22 @@
+description = "Run a strict near-final thesis review before oral defense or submission."
+prompt = """
+Read @{agents/shared/thesis-agent-core.md}, @{agents/shared/student-stage-router.md}, and @{agents/shared/command-map.md}.
+
+Use the user's arguments as the manuscript source path; default to source/shadow.
+
+Run:
+python scripts/manuscript_concept_audit.py all --source <source>
+python scripts/thesis_style_scan.py scan
+python scripts/thesis_consistency_audit.py
+python scripts/check_public_readiness.py
+
+Then read the generated reports under consistency/reports/ and produce a Traditional Chinese oral-defense risk review with four buckets:
+- 必修: risks that can break the research question, theoretical promise, empirical operation, conclusion recovery, citation basis, or public safety.
+- 建議修: weaknesses that reduce persuasiveness but do not necessarily block oral defense.
+- 可不修: wording, style, or formatting preferences.
+- 可答辯處理: issues that can be handled through scope statements, limitations, or oral explanation.
+
+Quote manuscript evidence or report lines for every mandatory finding.
+
+Do not claim DOCX or school-format compliance unless a school template has been checked separately.
+"""

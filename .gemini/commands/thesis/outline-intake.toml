@@ -1,6 +1,6 @@
 description = "Intake a thesis outline and identify citation-risk and next review steps."
 prompt = """
-Read @{agents/shared/thesis-agent-core.md} and @{agents/shared/command-map.md}.
+Read @{agents/shared/thesis-agent-core.md}, @{agents/shared/student-stage-router.md}, and @{agents/shared/command-map.md}.
 
 Use the user's argument as the outline or draft path.
 

@@ -30,8 +30,8 @@ This roadmap describes the work needed to make the Graduate Thesis Workflow Tool
 - Add Traditional Chinese examples for topic framing, chapter planning, and advisor feedback.
 - Add outline-intake examples that show when to verify citations before rewriting.
 - Add more concept-audit examples for qualitative, quantitative, and mixed-method theses.
-- Expand topic examples beyond the current PSC and professional-master mini samples.
-- Add usage notes from students or advisors using different agents.
+- Expand topic examples beyond the current PSC and professional-master mini samples. Current status: v0.1.5 adds an AI teaching first-use sample.
+- Add usage notes from students or advisors using different agents. Current status: v0.1.5 includes simulated first-use feedback; real user feedback remains needed.
 - Document setup, verification, and troubleshooting steps.
 - Define maintainer review expectations for pull requests.
 - Add a citation file and basic project metadata.

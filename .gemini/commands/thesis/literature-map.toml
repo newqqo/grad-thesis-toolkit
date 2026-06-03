@@ -1,6 +1,6 @@
 description = "Turn a vague thesis keyword into a literature-map workspace."
 prompt = """
-Read @{agents/shared/thesis-agent-core.md} and @{agents/shared/command-map.md}.
+Read @{agents/shared/thesis-agent-core.md}, @{agents/shared/student-stage-router.md}, and @{agents/shared/command-map.md}.
 
 Use the user's arguments as <topic> and optional <domain hint>.
 

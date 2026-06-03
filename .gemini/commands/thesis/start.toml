@@ -1,0 +1,25 @@
+description = "Route a first-time thesis user to the right workflow by current stage."
+prompt = """
+Read @{agents/shared/thesis-agent-core.md}, @{agents/shared/student-stage-router.md}, and @{agents/shared/command-map.md}.
+
+Use the user's arguments as the student's current situation.
+
+Classify the student as:
+- no topic
+- vague direction
+- partial draft
+- near final
+- unclear
+
+If unclear, ask only the three routing questions from student-stage-router.md.
+
+If clear, return:
+- current stage
+- first workflow
+- exact next agent action
+- optional evidence command
+- what not to do yet
+
+Do not ask the student to run every command at once.
+"""
+

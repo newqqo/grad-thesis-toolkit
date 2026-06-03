@@ -10,6 +10,19 @@ The intended use is agent-assisted: Codex, Claude Code, Gemini CLI, Antigravity,
 
 繁體中文入口: [README.zh-TW.md](README.zh-TW.md)
 
+## Start By Student Stage
+
+Do not start every student with the same command list. First route the student's current state:
+
+| Student state | Best first entry |
+| --- | --- |
+| No thesis topic yet | [從 0 開始：還沒有題目](docs/start-here-zero-topic.zh-TW.md) |
+| Vague direction or keyword | [First use by student stage](docs/first-use-by-stage.md) and [vague topic to literature map](docs/vague-topic-to-literature-map.md) |
+| Partial outline or chapter draft | [Outline intake workflow](docs/outline-intake-workflow.md) and [concept checks](docs/concept-hierarchy-and-promise-check.md) |
+| Near final draft | Use the final-defense review workflow in [Agent adapters](agents/README.md) |
+
+Agents should read `agents/shared/student-stage-router.md` before choosing a workflow. For zero-topic students, the first action is an interview, not Python.
+
 ## Why This Exists
 
 Most strong thesis repositories are LaTeX, Typst, Pandoc, Quarto, or university-specific templates. This project has a narrower goal: help graduate students who must eventually submit or revise in Microsoft Word, while still keeping the thesis source in plain text and giving AI assistants stable rules for safe editing.
@@ -18,6 +31,7 @@ The differentiator is not typography alone. It is the workflow around a thesis:
 
 - vague topic to literature map workflow
 - cross-agent workflow adapters for Codex, Claude, Gemini, and Antigravity-style environments
+- first-use routing for no-topic, vague-direction, partial-draft, and near-final students
 - stable paragraph IDs for precise edits and review notes
 - Markdown chapter sources that can be versioned with Git
 - DOCX-first rendering for Word-centered departments
@@ -84,6 +98,8 @@ grad-thesis-toolkit/
 
 ## Project Docs
 
+- [First use by student stage](docs/first-use-by-stage.md)
+- [從 0 開始：還沒有題目](docs/start-here-zero-topic.zh-TW.md)
 - [台灣碩專班從 0 開始指南](docs/taiwan-zero-start-guide.md)
 - [從模糊題目到文獻地圖](docs/vague-topic-to-literature-map.md)
 - [PSC literature map example](docs/psc-literature-map-example.md)
@@ -93,6 +109,8 @@ grad-thesis-toolkit/
 - [Agent adapter strategy](docs/agent-adapter-strategy.md)
 - [Agent adapters](agents/README.md)
 - [Taiwan professional master's mini sample](examples/tw-professional-master/README.md)
+- [Non-PSC first-use sample](examples/ai-teaching-first-use/README.md)
+- [Student simulation report](docs/user-simulation-report.md)
 - [12 週初稿衝刺計畫](docs/professional-master-12-week-plan.md)
 - [指導教授回饋循環](docs/advisor-review-workflow.md)
 - [Competitive positioning](docs/competitive-positioning.md)

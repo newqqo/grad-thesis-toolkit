@@ -1,13 +1,13 @@
-# Seed Papers
+# 種子文獻 Seed Papers
 
-Add 5-10 seed papers here.
+在這裡放 5-10 篇作為起點的文獻。
 
-| Status | Citation | Why It Is A Seed | Source Link | Verified Source Text? |
+| 狀態 | 引用資訊 | 為何適合作為種子 | 來源連結 | 已對照原文？ |
 | --- | --- | --- | --- | --- |
 | candidate | | | | no |
 
-## Notes
+## 判斷提醒
 
-- A seed paper is not just a paper that mentions the keyword.
-- Prefer review papers, highly cited papers, recent papers, and papers that define the main debate.
-- If two AI/search tools return zero overlap, keep both sets and compare why.
+- 種子文獻不是「有提到關鍵字」就算。
+- 優先選綜述文獻、高引用文獻、近年文獻，以及能定義主要爭論的文獻。
+- 如果兩個 AI 或搜尋工具結果完全不重疊，先保留兩組，再比較差異原因。

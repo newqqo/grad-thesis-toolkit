@@ -4,7 +4,7 @@ argument-hint: <topic> [domain hint]
 allowed-tools: Read, Glob, Grep, Bash(python scripts/init_literature_map.py:*)
 ---
 
-Read `agents/shared/thesis-agent-core.md` and `agents/shared/command-map.md`.
+Read `agents/shared/thesis-agent-core.md`, `agents/shared/student-stage-router.md`, and `agents/shared/command-map.md`.
 
 Task:
 

@@ -4,7 +4,7 @@ argument-hint: <outline path>
 allowed-tools: Read, Glob, Grep, Bash(python scripts/extract_citation_candidates.py:*)
 ---
 
-Read `agents/shared/thesis-agent-core.md` and `agents/shared/command-map.md`.
+Read `agents/shared/thesis-agent-core.md`, `agents/shared/student-stage-router.md`, and `agents/shared/command-map.md`.
 
 Task:
 
