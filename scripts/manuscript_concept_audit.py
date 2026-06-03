@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import re
+import sys
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
@@ -541,7 +542,14 @@ def write_report(path: Path, content: str) -> None:
 
 def build_context(args: argparse.Namespace) -> tuple[list[SentenceRecord], list[Occurrence]]:
     source = Path(args.source).resolve()
+    if not source.exists():
+        raise SystemExit(f"Source not found: {args.source}")
     sentences = read_sentences(source)
+    if not sentences:
+        print(
+            f"warning: no manuscript sentences found in {args.source}; the report will be empty.",
+            file=sys.stderr,
+        )
     occurrences = collect_occurrences(sentences, getattr(args, "concept", None))
     return sentences, occurrences
 

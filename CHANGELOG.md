@@ -9,6 +9,7 @@
 - Added a contributor "run the tests" path so Codex and other agents have a verifiable maintenance loop.
 - Added committed, public-safe sample outputs under `docs/sample-outputs/` (citation candidates, concept tree, promise-delivery) so reviewers can see what the toolkit produces without running it.
 - Made generated report source paths POSIX-style so reports are byte-identical across Linux, macOS, and Windows.
+- Hardened CLI error handling: a mistyped `--input`/`--source` path now fails with a clear one-line message and a non-zero exit code instead of a Python traceback (citation extractor) or a misleading "wrote report" success over empty content (concept audit, style scan, consistency audit). An existing-but-empty source now prints a warning. Covered by `tests/test_cli_errors.py`.
 
 ## 0.1.5 - First-Use Student Routing Refinements
 

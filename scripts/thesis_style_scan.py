@@ -68,6 +68,8 @@ def build_report(source: Path) -> str:
 
 def cmd_scan(args: argparse.Namespace) -> None:
     source = Path(args.source).resolve()
+    if not source.exists():
+        raise SystemExit(f"Source not found: {args.source}")
     report = Path(args.report).resolve()
     report.parent.mkdir(parents=True, exist_ok=True)
     report.write_text(build_report(source), encoding="utf-8")

@@ -66,9 +66,12 @@ def main() -> None:
     parser.add_argument("--report", default=str(DEFAULT_REPORT))
     args = parser.parse_args()
 
+    source = Path(args.source).resolve()
+    if not source.exists():
+        raise SystemExit(f"Source not found: {args.source}")
     report = Path(args.report).resolve()
     report.parent.mkdir(parents=True, exist_ok=True)
-    report.write_text(audit(Path(args.source).resolve(), Path(args.rules).resolve()), encoding="utf-8")
+    report.write_text(audit(source, Path(args.rules).resolve()), encoding="utf-8")
     print(f"wrote {report}")
 
 

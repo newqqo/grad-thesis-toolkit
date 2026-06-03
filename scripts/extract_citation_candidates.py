@@ -105,6 +105,8 @@ def main() -> None:
     args = parser.parse_args()
 
     source = Path(args.input).resolve()
+    if not source.exists():
+        raise SystemExit(f"Input file not found: {args.input}")
     text = read_input(source)
     candidates = collect_candidates(text)
     report = render_markdown(candidates, source)
