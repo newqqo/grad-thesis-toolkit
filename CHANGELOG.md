@@ -10,6 +10,8 @@
 - Added committed, public-safe sample outputs under `docs/sample-outputs/` (citation candidates, concept tree, promise-delivery) so reviewers can see what the toolkit produces without running it.
 - Made generated report source paths POSIX-style so reports are byte-identical across Linux, macOS, and Windows.
 - Hardened CLI error handling: a mistyped `--input`/`--source` path now fails with a clear one-line message and a non-zero exit code instead of a Python traceback (citation extractor) or a misleading "wrote report" success over empty content (concept audit, style scan, consistency audit). An existing-but-empty source now prints a warning. Covered by `tests/test_cli_errors.py`.
+- Ignore generated literature topic workspaces by default (keeping the public PSC example) so a student does not accidentally commit private research notes via `git add -A`.
+- Added a runnable end-to-end Traditional Chinese walkthrough (`docs/walkthrough-end-to-end.zh-TW.md`) that ties the four student stages into one copy-paste path using the bundled public placeholder data.
 
 ## 0.1.5 - First-Use Student Routing Refinements
 

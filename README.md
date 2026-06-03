@@ -99,6 +99,7 @@ grad-thesis-toolkit/
 
 ## Project Docs
 
+- [完整範例：跟著做一遍（runnable end-to-end walkthrough）](docs/walkthrough-end-to-end.zh-TW.md)
 - [First use by student stage](docs/first-use-by-stage.md)
 - [從 0 開始：還沒有題目](docs/start-here-zero-topic.zh-TW.md)
 - [台灣碩專班從 0 開始指南](docs/taiwan-zero-start-guide.md)
