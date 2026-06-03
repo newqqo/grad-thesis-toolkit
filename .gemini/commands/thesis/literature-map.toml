@@ -1,0 +1,19 @@
+description = "Turn a vague thesis keyword into a literature-map workspace."
+prompt = """
+Read @{agents/shared/thesis-agent-core.md} and @{agents/shared/command-map.md}.
+
+Use the user's arguments as <topic> and optional <domain hint>.
+
+Run:
+python scripts/init_literature_map.py --topic "<topic>" --domain-hint "<hint>"
+
+Then inspect the generated literature workspace and return a Traditional Chinese advisor-facing summary:
+- possible research clusters
+- seed-paper search strategy
+- likely data
+- method fit
+- gap radar
+- next advisor questions
+
+Mark all literature claims as unverified candidates until checked against original source text.
+"""

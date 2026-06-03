@@ -12,6 +12,7 @@ Use this checklist before committing examples, demo files, release assets, or ge
 - local absolute paths from a personal user directory
 - generated reports that contain private file paths or private document titles
 - institution-specific forms unless they are public and redistribution is allowed
+- agent adapter files containing private prompts, tokens, account IDs, or unpublished thesis details
 
 ## Public-Safe Examples
 

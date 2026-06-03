@@ -9,6 +9,7 @@ This roadmap describes the work needed to make the Graduate Thesis Workflow Tool
 - Keep the vague-topic-to-literature-map workflow central to the student journey.
 - Keep citation verification and source traceability as explicit AI-use guardrails.
 - Keep concept hierarchy and promise-delivery checks tied to manuscript evidence.
+- Keep agent adapters thin and tied to the shared core rules.
 - Replace private examples with generic fixtures and placeholder documents.
 - Confirm that scripts, docs, and templates do not rely on local absolute paths.
 - Keep the root license current and consistent with `CITATION.cff`.
@@ -30,6 +31,7 @@ This roadmap describes the work needed to make the Graduate Thesis Workflow Tool
 - Add outline-intake examples that show when to verify citations before rewriting.
 - Add more concept-audit examples for qualitative, quantitative, and mixed-method theses.
 - Expand topic examples beyond the current PSC and professional-master mini samples.
+- Add usage notes from students or advisors using different agents.
 - Document setup, verification, and troubleshooting steps.
 - Define maintainer review expectations for pull requests.
 - Add a citation file and basic project metadata.

@@ -18,6 +18,7 @@ def main() -> int:
     python = sys.executable
     steps = [
         [python, "scripts/check_public_readiness.py"],
+        [python, "scripts/check_agent_adapters.py"],
         [
             python,
             "scripts/init_literature_map.py",
@@ -63,6 +64,7 @@ def main() -> int:
         run(step)
     print("\nDemo complete.")
     print("- Literature map: literature/psc/")
+    print("- Agent adapter check: passed")
     print("- Citation candidate report: consistency/reports/citation_candidates.md")
     print("- Concept hierarchy report: consistency/reports/concept_hierarchy_report.md")
     print("- Promise-delivery report: consistency/reports/promise_delivery_report.md")

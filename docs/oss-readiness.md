@@ -15,4 +15,4 @@ This clean copy is intended as the safer public direction for a Codex for Open S
 - Collect early feedback from Taiwan graduate students, advisors, or lab peers.
 - Add school-front-matter adapter documentation without committing private school forms.
 - Keep reviewing copied scripts and generated reports for hard-coded local paths.
-- Keep the full quick-start flow and `python scripts/run_demo.py` passing in a fresh environment.
+- Keep the full quick-start flow, agent-adapter check, and `python scripts/run_demo.py` passing in a fresh environment.

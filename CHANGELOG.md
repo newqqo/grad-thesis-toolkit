@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.4 - Cross-Agent Thesis Workflow Adapters
+
+- Added shared agent workflow core and command map.
+- Added root agent context files for Codex, Claude Code, and Gemini-style project memory.
+- Added Codex skill template and Antigravity workspace skill adapter.
+- Added Claude Code thesis commands and thesis-reviewer subagent template.
+- Added Gemini CLI thesis command templates.
+- Added agent adapter strategy documentation and adapter validation script.
+- Added agent adapter validation to the one-command demo and CI smoke test.
+
 ## 0.1.3 - Concept Hierarchy And Promise-Delivery Checks
 
 - Added manuscript concept audit script for concept hierarchy and theoretical promise-delivery checks.

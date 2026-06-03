@@ -8,7 +8,7 @@ Graduate Thesis Workflow Toolkit
 
 ## Short Description
 
-A DOCX-first graduate thesis workflow toolkit for Taiwan students, especially professional master's students starting from zero. It helps students move from a vague keyword to a literature map, then to research questions, Markdown chapters, Word deliverables, consistency checks, and AI-auditable revisions.
+A DOCX-first, agent-assisted graduate thesis workflow toolkit for Taiwan students, especially professional master's students starting from zero. It helps students use Codex, Claude, Gemini, Antigravity, or similar agents to move from a vague keyword to a literature map, then to research questions, Markdown chapters, Word deliverables, consistency checks, and AI-auditable revisions.
 
 ## Problem
 
@@ -19,6 +19,8 @@ The missing layer is not only formatting. Students need a repeatable workspace t
 For Taiwan professional master's students, the starting problem is often earlier than formatting: turning work experience into a researchable topic, building chapter structure, keeping advisor feedback organized, and producing a reviewable Word draft while working full time.
 
 Many students begin with only a vague keyword, such as PSC, ESG, AI teaching, or digital transformation. They need a guided way to find seed papers, map research clusters, identify domestic/international gaps, and decide where they can stand academically.
+
+The workflow is intended for agent use, not just manual Python execution. The repository provides shared rules and platform adapters so different agents can run evidence scripts, read reports, and apply the same thesis-review discipline.
 
 ## Proposed Solution
 
@@ -32,6 +34,7 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 - an outline intake workflow that extracts citation candidates before structural rewriting, so students can verify evidence before expanding claims
 - a reusable AI research partner playbook and Traditional Chinese prompt template for guided menus, pressure tests, literature mapping, and chapter-level writing tasks
 - concept hierarchy and theoretical promise-delivery checks that use manuscript sentences to detect term drift, unsupported high-level concepts, and chapter-level delivery gaps
+- cross-agent adapters for Codex, Antigravity, Claude Code, and Gemini CLI-style workflows
 - advisor-review workflow guidance for Word/PDF feedback loops
 - style and public-readiness checks
 - GitHub Actions smoke testing for placeholder DOCX rendering
@@ -45,6 +48,7 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 - outline intake and citation-candidate extraction for students who already have a partial plan
 - prompt templates that keep AI assistance skeptical, source-aware, and advisor-reviewable
 - concept-audit workflows that help students verify whether chapter 1 concepts are supported, operated, and recovered across the thesis
+- shared agent rules, skills, project-memory files, and command templates for multiple AI coding agents
 - a public-safe Taiwan professional master's mini sample that demonstrates topic narrowing, matrix setup, gap radar, advisor feedback tracking, and chapter tasks
 - placeholder examples that demonstrate structure without private content
 - documentation for setup, contribution, security, citation, and troubleshooting
@@ -68,7 +72,7 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 
 ## Project Maturity
 
-The repository is a public candidate at version 0.1.3. The core placeholder workflow runs locally and in CI: public readiness check, style scan, consistency audit, concept hierarchy audit, promise-delivery audit, DOCX template generation, DOCX rendering, literature-map initialization, and outline citation-candidate extraction. The next maturity step is collecting feedback from Taiwan students and adding a stronger sample project with screenshots.
+The repository is a public candidate at version 0.1.4. The core placeholder workflow runs locally and in CI: public readiness check, agent-adapter validation, style scan, consistency audit, concept hierarchy audit, promise-delivery audit, DOCX template generation, DOCX rendering, literature-map initialization, and outline citation-candidate extraction. The next maturity step is collecting feedback from Taiwan students and adding a stronger sample project with screenshots.
 
 ## Risks and Mitigations
 
@@ -93,5 +97,5 @@ The repository is a public candidate at version 0.1.3. The core placeholder work
 
 - Repository URL: `https://github.com/newqqo/grad-thesis-toolkit`
 - License: MIT
-- Current release: 0.1.3 concept hierarchy and promise-delivery checks
+- Current release: 0.1.4 cross-agent thesis workflow adapters
 - Public demo: `python scripts/run_demo.py`

@@ -2,7 +2,7 @@
 
 這是一套給研究生使用的論文寫作工作流工具，特別適合台灣需要用 Word / DOCX 來回修稿、但又想保留版本控制與 AI 協作紀錄的學生。
 
-它不是某一所學校的正式格式樣板，也不是要取代 LaTeX / Typst / Pandoc。它的目標比較實際：幫「還不知道怎麼開始」的碩士生、碩專班生，把論文從 0 整理成可以交給老師看的初稿。
+它不是某一所學校的正式格式樣板，也不是要取代 LaTeX / Typst / Pandoc。它的目標比較實際：幫「還不知道怎麼開始」的碩士生、碩專班生，搭配 Codex、Claude Code、Gemini CLI、Antigravity 或類似 agent，把論文從 0 整理成可以交給老師看的初稿。
 
 ## 適合誰
 
@@ -10,6 +10,7 @@
 - 題目還不穩、章節還沒成形的人
 - 老師主要用 Word / PDF 回饋的人
 - 想用 AI 幫忙整理、改寫、檢查，但不想讓修改失控的人
+- 想讓不同 AI agent 都依同一套論文審查規則工作的人
 - 想把正文、產出、文獻、規則、老師意見分開管理的人
 
 ## 跟一般論文樣板不同的地方
@@ -19,7 +20,7 @@
 | 台灣 LaTeX 論文樣板 | 格式精準、適合熟悉 LaTeX 的學生 | 從 0 開始寫作與 Word 修稿循環比較不直覺 |
 | Word 樣板 | 老師和學校容易接受 | 難追蹤版本、AI 修改、章節規則與一致性 |
 | Pandoc / Quarto | 多格式輸出強 | 對完全新手與 Word 審稿場景仍偏工程化 |
-| 本工具 | 寫作流程、DOCX 產出、段落 ID、AI 可稽核 | 不保證符合任何學校格式，需自行套用校方規定 |
+| 本工具 | 寫作流程、DOCX 產出、段落 ID、跨 agent 工作流、AI 可稽核 | 不保證符合任何學校格式，需自行套用校方規定 |
 
 ## 從 0 開始怎麼用
 
@@ -30,10 +31,11 @@
 3. [AI 研究夥伴 Playbook](docs/research-partner-playbook.md)
 4. [大綱匯入流程](docs/outline-intake-workflow.md)
 5. [概念階層與理論交付檢查](docs/concept-hierarchy-and-promise-check.md)
-6. [台灣碩專班最小樣本](examples/tw-professional-master/README.md)
-7. [12 週初稿衝刺計畫](docs/professional-master-12-week-plan.md)
-8. [指導教授回饋循環](docs/advisor-review-workflow.md)
-9. [隱私審查 checklist](docs/privacy-review-checklist.md)
+6. [Agent adapter strategy](docs/agent-adapter-strategy.md)
+7. [台灣碩專班最小樣本](examples/tw-professional-master/README.md)
+8. [12 週初稿衝刺計畫](docs/professional-master-12-week-plan.md)
+9. [指導教授回饋循環](docs/advisor-review-workflow.md)
+10. [隱私審查 checklist](docs/privacy-review-checklist.md)
 
 如果你現在只知道一個關鍵字，例如 `PSC`，先不要急著寫第 1 章。先建立文獻地圖工作區：
 
@@ -81,6 +83,7 @@ python scripts/check_public_readiness.py
 python scripts/init_literature_map.py --topic "PSC" --domain-hint "port state control / maritime safety"
 python scripts/extract_citation_candidates.py --input examples/outline-with-citations.md
 python scripts/manuscript_concept_audit.py all --source source/shadow
+python scripts/check_agent_adapters.py
 python scripts/thesis_style_scan.py scan
 python scripts/thesis_consistency_audit.py
 python scripts/create_thin_template_v2.py

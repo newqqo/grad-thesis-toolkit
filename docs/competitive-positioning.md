@@ -57,6 +57,7 @@ This project targets that beginning stage.
 - Citation-candidate extraction before outline rewriting.
 - Concept hierarchy and promise-delivery checks grounded in manuscript sentences.
 - Research-partner prompt/playbook that requires verification and advisor-facing next steps.
+- Cross-agent adapters that turn the workflow into reusable agent behavior rather than Python-only scripts.
 - Template repository and release artifact for quick adoption.
 
 ## Claims We Should Avoid

@@ -1,0 +1,19 @@
+description = "Intake a thesis outline and identify citation-risk and next review steps."
+prompt = """
+Read @{agents/shared/thesis-agent-core.md} and @{agents/shared/command-map.md}.
+
+Use the user's argument as the outline or draft path.
+
+Run:
+python scripts/extract_citation_candidates.py --input <path> --output consistency/reports/citation_candidates.md
+
+Then read consistency/reports/citation_candidates.md and produce a Traditional Chinese intake menu:
+0. citation verification
+1. logic and structure pressure test
+2. structural completeness check
+3. literature-map expansion
+4. concept alignment check
+5. targeted paragraph rewrite
+
+If citation candidates exist, recommend verification before heavy rewriting.
+"""

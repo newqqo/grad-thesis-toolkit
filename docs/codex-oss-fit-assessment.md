@@ -16,7 +16,7 @@ This project should therefore avoid claiming broad usage. The stronger argument 
 
 - it addresses a real student workflow gap not covered by most thesis format templates,
 - it is public, placeholder-first, and privacy-aware,
-- it uses scripts, CI, releases, docs, and checks that Codex can help maintain,
+- it uses scripts, CI, releases, docs, skills, and cross-agent adapters that Codex can help maintain,
 - it turns AI thesis assistance into auditable workflows instead of invisible rewriting.
 
 ## Strong Points
@@ -27,6 +27,7 @@ This project should therefore avoid claiming broad usage. The stronger argument 
 - Vague-topic-to-literature-map workflow for students who only have a keyword.
 - Outline citation-candidate extraction before structural rewriting.
 - Concept hierarchy and theoretical promise-delivery checks grounded in manuscript sentences.
+- Cross-agent adapters for Codex, Antigravity, Claude Code, and Gemini CLI-style workflows.
 - Stable paragraph IDs and consistency rules for auditable AI edits.
 - Public-readiness scan that helps prevent accidental exposure of private drafts, PDFs, local paths, and credentials.
 

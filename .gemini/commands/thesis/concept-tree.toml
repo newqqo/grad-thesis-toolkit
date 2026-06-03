@@ -1,0 +1,20 @@
+description = "Build a source-grounded thesis concept hierarchy tree."
+prompt = """
+Read @{agents/shared/thesis-agent-core.md} and @{agents/shared/command-map.md}.
+
+Use the user's arguments as the manuscript source path; default to source/shadow.
+
+Run the evidence command:
+python scripts/manuscript_concept_audit.py concept-tree --source <source>
+
+Then read consistency/reports/concept_hierarchy_report.md and produce a Traditional Chinese review:
+- upper-level fields/context
+- mid-level analysis units
+- lower-level tools/measures/operations
+- representative manuscript sentences
+- stable terms
+- rank drift, semantic expansion, or substitutions
+- minimum-change concept unification plan
+
+Use only manuscript text unless the user explicitly asks for external theory.
+"""

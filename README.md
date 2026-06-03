@@ -6,6 +6,8 @@ A clean, reusable workspace for writing, checking, rendering, and packaging a gr
 
 This repository is a public-template candidate. It intentionally contains workflow code and placeholder content only. Personal thesis text, research data, generated deliverables, and private literature PDFs should stay outside the public repository.
 
+The intended use is agent-assisted: Codex, Claude Code, Gemini CLI, Antigravity, or similar agents can use the shared workflow rules and platform adapters in `agents/`, `.claude/`, `.gemini/`, and `.agents/`.
+
 繁體中文入口: [README.zh-TW.md](README.zh-TW.md)
 
 ## Why This Exists
@@ -15,6 +17,7 @@ Most strong thesis repositories are LaTeX, Typst, Pandoc, Quarto, or university-
 The differentiator is not typography alone. It is the workflow around a thesis:
 
 - vague topic to literature map workflow
+- cross-agent workflow adapters for Codex, Claude, Gemini, and Antigravity-style environments
 - stable paragraph IDs for precise edits and review notes
 - Markdown chapter sources that can be versioned with Git
 - DOCX-first rendering for Word-centered departments
@@ -66,6 +69,7 @@ grad-thesis-toolkit/
 │   ├── rules/           # Style, term, and chapter-contract guardrails
 │   └── reports/         # Generated audit reports
 ├── literature/           # Topic workspaces for literature maps
+├── agents/               # Shared agent workflow rules and platform adapters
 ├── prompts/              # Reusable AI research partner prompts
 ├── examples/             # Public placeholder outlines and demos
 ├── assets/
@@ -86,6 +90,8 @@ grad-thesis-toolkit/
 - [AI research partner playbook](docs/research-partner-playbook.md)
 - [Outline intake workflow](docs/outline-intake-workflow.md)
 - [Concept hierarchy and promise-delivery checks](docs/concept-hierarchy-and-promise-check.md)
+- [Agent adapter strategy](docs/agent-adapter-strategy.md)
+- [Agent adapters](agents/README.md)
 - [Taiwan professional master's mini sample](examples/tw-professional-master/README.md)
 - [12 週初稿衝刺計畫](docs/professional-master-12-week-plan.md)
 - [指導教授回饋循環](docs/advisor-review-workflow.md)
@@ -133,6 +139,7 @@ python scripts/thesis_md_pipeline_v2.py render --skip-pdf
 python scripts/thesis_style_scan.py scan
 python scripts/thesis_consistency_audit.py
 python scripts/check_public_readiness.py
+python scripts/check_agent_adapters.py
 ```
 
 For a single public-safe smoke demo, run:
@@ -201,6 +208,9 @@ python scripts/extract_citation_candidates.py --input examples/outline-with-cita
 # Audit concept hierarchy and theoretical promise vs delivery
 python scripts/manuscript_concept_audit.py all --source source/shadow
 
+# Check cross-platform agent adapter files
+python scripts/check_agent_adapters.py
+
 # Check whether the public template has obvious private-content risks
 python scripts/check_public_readiness.py
 
@@ -216,6 +226,7 @@ Supported now:
 - literature-map workspace initialization from a vague topic
 - citation-candidate extraction from Markdown, text, or DOCX outlines
 - concept hierarchy and theoretical promise-delivery audit reports
+- cross-platform agent adapter checks for Codex, Antigravity, Claude, and Gemini
 - generated thin DOCX template
 - public-readiness scan for obvious private-content risks
 - style and consistency reports

@@ -1,0 +1,20 @@
+description = "Check theoretical promise vs actual delivery across thesis chapters."
+prompt = """
+Read @{agents/shared/thesis-agent-core.md} and @{agents/shared/command-map.md}.
+
+Use the user's arguments as the manuscript source path and optional --concept terms; default to source/shadow.
+
+Run the evidence command:
+python scripts/manuscript_concept_audit.py promise-delivery --source <source> [--concept <term> ...]
+
+Then read consistency/reports/promise_delivery_report.md and produce a Traditional Chinese review table with:
+- concept name
+- chapter 1 promise
+- chapter 2 support
+- chapter 4 operation
+- chapter 5 recovery
+- judgment: 一致 / 部分落空 / 明顯落空
+- recommendation: 保留 / 降階 / 改寫 / 刪除
+
+Quote representative manuscript sentences. Do not give abstract comments without evidence.
+"""
