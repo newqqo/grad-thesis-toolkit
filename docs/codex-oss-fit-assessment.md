@@ -26,6 +26,7 @@ This project should therefore avoid claiming broad usage. The stronger argument 
 - DOCX-first output for Word-centered advisor review.
 - Vague-topic-to-literature-map workflow for students who only have a keyword.
 - Outline citation-candidate extraction before structural rewriting.
+- Concept hierarchy and theoretical promise-delivery checks grounded in manuscript sentences.
 - Stable paragraph IDs and consistency rules for auditable AI edits.
 - Public-readiness scan that helps prevent accidental exposure of private drafts, PDFs, local paths, and credentials.
 

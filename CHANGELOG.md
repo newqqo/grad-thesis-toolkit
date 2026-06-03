@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.3 - Concept Hierarchy And Promise-Delivery Checks
+
+- Added manuscript concept audit script for concept hierarchy and theoretical promise-delivery checks.
+- Added source-grounded reports for term stability, rank drift, naming conflicts, chapter support, chapter operation, and chapter recovery.
+- Added concept drift sample manuscript for public-safe demonstrations.
+- Added documentation and research-partner prompt rules for concept hierarchy and promise-delivery review modes.
+- Added the concept audit workflow to the one-command demo and CI smoke test.
+
 ## 0.1.2 - Literature Map And Research Partner Workflow
 
 - Added vague-topic-to-literature-map workflow for students who only have a keyword.

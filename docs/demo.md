@@ -27,6 +27,7 @@ Or run the two parts manually.
 ```powershell
 python scripts/init_literature_map.py --topic "PSC" --domain-hint "port state control / maritime safety" --overwrite
 python scripts/extract_citation_candidates.py --input examples/outline-with-citations.md --output consistency/reports/citation_candidates.md
+python scripts/manuscript_concept_audit.py all --source examples/concept-drift-sample.md --concept 數位轉型 --concept 服務流程治理框架 --concept 顧客回應機制
 ```
 
 Expected output:
@@ -39,8 +40,10 @@ Expected output:
 - `literature/psc/advisor-questions.md`
 - `literature/psc/ai-prompts.md`
 - `consistency/reports/citation_candidates.md` (generated report, ignored by git)
+- `consistency/reports/concept_hierarchy_report.md` (generated report, ignored by git)
+- `consistency/reports/promise_delivery_report.md` (generated report, ignored by git)
 
-This part demonstrates how a student moves from a vague keyword to a structured literature-map workspace, then treats outline citations as unverified candidates before using them in writing.
+This part demonstrates how a student moves from a vague keyword to a structured literature-map workspace, treats outline citations as unverified candidates, and checks whether manuscript concepts remain consistent across chapters.
 
 ### B. DOCX Render Workflow
 
@@ -71,6 +74,7 @@ Use this structure for a short recorded or live walkthrough:
 - "This repository demonstrates a reusable graduate thesis workflow toolkit."
 - "The demo uses placeholder content only."
 - "A student can start from a vague keyword, create a literature-map workspace, and identify what must be verified before writing."
+- "A student can run concept hierarchy and promise-delivery checks before asking an advisor to review a draft."
 - "Markdown chapters use stable paragraph IDs so AI edits can be requested and reviewed precisely."
 - "Source material, generated deliverables, documentation, and temporary files are separated."
 - "The workflow renders a DOCX output without committing private generated files."

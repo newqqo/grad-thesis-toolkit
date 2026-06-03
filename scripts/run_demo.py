@@ -35,6 +35,25 @@ def main() -> int:
             "--output",
             "consistency/reports/citation_candidates.md",
         ],
+        [
+            python,
+            "scripts/manuscript_concept_audit.py",
+            "all",
+            "--source",
+            "examples/concept-drift-sample.md",
+            "--concept",
+            "數位轉型",
+            "--concept",
+            "服務流程治理框架",
+            "--concept",
+            "顧客回應機制",
+            "--concept",
+            "工單系統",
+            "--concept",
+            "回覆SOP",
+            "--concept",
+            "平均回覆時間",
+        ],
         [python, "scripts/thesis_style_scan.py", "scan"],
         [python, "scripts/thesis_consistency_audit.py"],
         [python, "scripts/create_thin_template_v2.py"],
@@ -45,6 +64,8 @@ def main() -> int:
     print("\nDemo complete.")
     print("- Literature map: literature/psc/")
     print("- Citation candidate report: consistency/reports/citation_candidates.md")
+    print("- Concept hierarchy report: consistency/reports/concept_hierarchy_report.md")
+    print("- Promise-delivery report: consistency/reports/promise_delivery_report.md")
     print("- DOCX output: deliverables/docx/thesis_render_v2_latest.docx")
     return 0
 

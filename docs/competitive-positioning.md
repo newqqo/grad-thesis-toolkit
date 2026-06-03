@@ -55,6 +55,7 @@ This project targets that beginning stage.
 - CI smoke test that proves the placeholder thesis can render.
 - Literature-map workspace generation from a vague keyword.
 - Citation-candidate extraction before outline rewriting.
+- Concept hierarchy and promise-delivery checks grounded in manuscript sentences.
 - Research-partner prompt/playbook that requires verification and advisor-facing next steps.
 - Template repository and release artifact for quick adoption.
 

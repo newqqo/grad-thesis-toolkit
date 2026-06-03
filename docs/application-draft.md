@@ -31,6 +31,7 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 - a vague-topic-to-literature-map initializer that creates a topic brief, search plan, seed-paper list, literature matrix, gap radar, advisor questions, and AI prompts
 - an outline intake workflow that extracts citation candidates before structural rewriting, so students can verify evidence before expanding claims
 - a reusable AI research partner playbook and Traditional Chinese prompt template for guided menus, pressure tests, literature mapping, and chapter-level writing tasks
+- concept hierarchy and theoretical promise-delivery checks that use manuscript sentences to detect term drift, unsupported high-level concepts, and chapter-level delivery gaps
 - advisor-review workflow guidance for Word/PDF feedback loops
 - style and public-readiness checks
 - GitHub Actions smoke testing for placeholder DOCX rendering
@@ -43,6 +44,7 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 - literature mapping workflow for students who only have a keyword
 - outline intake and citation-candidate extraction for students who already have a partial plan
 - prompt templates that keep AI assistance skeptical, source-aware, and advisor-reviewable
+- concept-audit workflows that help students verify whether chapter 1 concepts are supported, operated, and recovered across the thesis
 - a public-safe Taiwan professional master's mini sample that demonstrates topic narrowing, matrix setup, gap radar, advisor feedback tracking, and chapter tasks
 - placeholder examples that demonstrate structure without private content
 - documentation for setup, contribution, security, citation, and troubleshooting
@@ -66,7 +68,7 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 
 ## Project Maturity
 
-The repository is a public candidate at version 0.1.2. The core placeholder workflow runs locally and in CI: public readiness check, style scan, consistency audit, DOCX template generation, DOCX rendering, literature-map initialization, and outline citation-candidate extraction. The next maturity step is collecting feedback from Taiwan students and adding a stronger sample project with screenshots.
+The repository is a public candidate at version 0.1.3. The core placeholder workflow runs locally and in CI: public readiness check, style scan, consistency audit, concept hierarchy audit, promise-delivery audit, DOCX template generation, DOCX rendering, literature-map initialization, and outline citation-candidate extraction. The next maturity step is collecting feedback from Taiwan students and adding a stronger sample project with screenshots.
 
 ## Risks and Mitigations
 
@@ -91,5 +93,5 @@ The repository is a public candidate at version 0.1.2. The core placeholder work
 
 - Repository URL: `https://github.com/newqqo/grad-thesis-toolkit`
 - License: MIT
-- Current release: 0.1.2 literature map and research partner workflow
+- Current release: 0.1.3 concept hierarchy and promise-delivery checks
 - Public demo: `python scripts/run_demo.py`

@@ -28,6 +28,7 @@ jobs:
         run: |
           python scripts/thesis_style_scan.py scan
           python scripts/thesis_consistency_audit.py
+          python scripts/manuscript_concept_audit.py all --source examples/concept-drift-sample.md --concept "數位轉型" --concept "服務流程治理框架" --concept "顧客回應機制"
 
       - name: Render placeholder DOCX
         run: python scripts/thesis_md_pipeline_v2.py render --skip-pdf
@@ -37,4 +38,3 @@ jobs:
         with:
           name: placeholder-thesis-docx
           path: deliverables/docx/thesis_render_v2_latest.docx
-

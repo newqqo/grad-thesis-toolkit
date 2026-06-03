@@ -85,6 +85,7 @@ grad-thesis-toolkit/
 - [PSC literature map example](docs/psc-literature-map-example.md)
 - [AI research partner playbook](docs/research-partner-playbook.md)
 - [Outline intake workflow](docs/outline-intake-workflow.md)
+- [Concept hierarchy and promise-delivery checks](docs/concept-hierarchy-and-promise-check.md)
 - [Taiwan professional master's mini sample](examples/tw-professional-master/README.md)
 - [12 週初稿衝刺計畫](docs/professional-master-12-week-plan.md)
 - [指導教授回饋循環](docs/advisor-review-workflow.md)
@@ -162,6 +163,22 @@ python scripts/extract_citation_candidates.py --input examples/outline-with-cita
 
 Use the output with [the outline intake workflow](docs/outline-intake-workflow.md) and [the research partner playbook](docs/research-partner-playbook.md). The intended sequence is: identify unverified references, pressure-test the outline, expand the literature map, then turn the strongest path into chapter-level writing tasks.
 
+## Concept Hierarchy And Promise-Delivery Checks
+
+For a strict internal manuscript review, generate source-grounded concept reports:
+
+```powershell
+python scripts/manuscript_concept_audit.py all --source source/shadow
+```
+
+For a public-safe sample:
+
+```powershell
+python scripts/manuscript_concept_audit.py all --source examples/concept-drift-sample.md
+```
+
+The reports help identify concept hierarchy, term drift, and whether chapter 1 promises are supported in chapter 2, operated in chapter 4, and recovered in chapter 5.
+
 ## Core Commands
 
 ```powershell
@@ -181,6 +198,9 @@ python scripts/thesis_consistency_audit.py
 # Extract citation candidates from a Markdown, text, or DOCX outline
 python scripts/extract_citation_candidates.py --input examples/outline-with-citations.md
 
+# Audit concept hierarchy and theoretical promise vs delivery
+python scripts/manuscript_concept_audit.py all --source source/shadow
+
 # Check whether the public template has obvious private-content risks
 python scripts/check_public_readiness.py
 
@@ -195,6 +215,7 @@ Supported now:
 - body-only DOCX rendering from placeholder Markdown chapters
 - literature-map workspace initialization from a vague topic
 - citation-candidate extraction from Markdown, text, or DOCX outlines
+- concept hierarchy and theoretical promise-delivery audit reports
 - generated thin DOCX template
 - public-readiness scan for obvious private-content risks
 - style and consistency reports
