@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.2 - Literature Map And Research Partner Workflow
+
+- Added vague-topic-to-literature-map workflow for students who only have a keyword.
+- Added literature map initializer script and topic workspace templates.
+- Added PSC literature map example.
+- Added AI research partner playbook and Traditional Chinese prompt template.
+- Added outline intake workflow for turning partial outlines into advisor-ready next steps.
+- Added citation-candidate extraction utility for Markdown, text, and DOCX outlines.
+
 ## 0.1.1 - Taiwan Student Workflow
 
 - Added Traditional Chinese README entrypoint.

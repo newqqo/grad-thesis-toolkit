@@ -11,9 +11,8 @@ This clean copy is intended as the safer public direction for a Codex for Open S
 
 ## Still Needed Before Publishing
 
-- Review copied scripts for hard-coded local paths.
-- Add a license after choosing the intended open-source license.
 - Add a small screenshot or rendered demo using placeholder content.
-- Run the full quick-start flow in a fresh environment.
-- Rewrite package scripts or command examples if any original path assumptions remain.
-
+- Collect early feedback from Taiwan graduate students, advisors, or lab peers.
+- Add school-front-matter adapter documentation without committing private school forms.
+- Keep reviewing copied scripts and generated reports for hard-coded local paths.
+- Keep the full quick-start flow and `python scripts/run_demo.py` passing in a fresh environment.

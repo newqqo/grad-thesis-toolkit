@@ -25,6 +25,15 @@ Taiwan and international thesis repositories tend to be strong in these areas:
 
 Examples include Taiwan-focused LaTeX templates such as `sppmg/TW_Thesis_Template`, NTU/NYCU/NCKU templates, and international Markdown/Pandoc/Typst projects.
 
+## Patterns Worth Learning From
+
+- `sppmg/TW_Thesis_Template`: strong Taiwan onboarding, multi-school awareness, and explicit user guidance.
+- `Hsins/NTU-Thesis-LaTeX-Template` and `coldwufish/NYCU-thesis-template`: clear local thesis-format context and examples.
+- `cagix/pandoc-thesis`: reproducible Markdown-to-output workflow with automation.
+- Literature-review matrix and systematic-review tools: structured matrices, source verification gates, and exportable artifacts.
+
+This project should borrow the onboarding and reproducibility patterns, not the claim of official formatting compliance.
+
 ## Gap This Project Targets
 
 Many Taiwan professional master's students do not begin with LaTeX or a reproducible publishing stack. They begin with:
@@ -44,6 +53,9 @@ This project targets that beginning stage.
 - Stable paragraph IDs for precise AI and advisor feedback.
 - Explicit privacy/public-readiness checks.
 - CI smoke test that proves the placeholder thesis can render.
+- Literature-map workspace generation from a vague keyword.
+- Citation-candidate extraction before outline rewriting.
+- Research-partner prompt/playbook that requires verification and advisor-facing next steps.
 - Template repository and release artifact for quick adoption.
 
 ## Claims We Should Avoid
@@ -60,4 +72,4 @@ This project targets that beginning stage.
 3. Add a small `examples/tw-professional-master` sample project.
 4. Add school-front-matter adapter documentation without committing private school forms.
 5. Add a short video or GIF demo of edit -> check -> render.
-
+6. Collect feedback from at least 3 Taiwan graduate students or advisors.

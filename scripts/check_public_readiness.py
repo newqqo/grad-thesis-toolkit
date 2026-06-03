@@ -9,8 +9,11 @@ ROOT = Path(__file__).resolve().parents[1]
 
 DEFAULT_BLOCKLIST = [
     r"C:\\Users\\[^\\]+",
+    r"C:\\\\Users\\\\[^\\]+",
     r"/Users/[^/]+",
+    r"\\/Users\\/[^\\/]+",
     r"C:\\Code",
+    r"C:\\\\Code",
     r"C:/Code",
     r"thesis-workspace",
     r"Date of Birth",

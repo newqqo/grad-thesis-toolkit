@@ -17,6 +17,7 @@ Thank you for considering a contribution to the Graduate Thesis Workflow Toolkit
 3. Run the relevant local checks for the files you changed.
 4. Remove generated files, caches, temporary outputs, and local paths unless they are intentionally part of the contribution.
 5. Confirm the change does not include private research data or personal information.
+6. Use the [privacy review checklist](docs/privacy-review-checklist.md) before adding examples, demo files, or release assets.
 
 ## Pull Request Checklist
 

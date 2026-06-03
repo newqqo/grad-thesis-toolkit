@@ -14,6 +14,7 @@ Most strong thesis repositories are LaTeX, Typst, Pandoc, Quarto, or university-
 
 The differentiator is not typography alone. It is the workflow around a thesis:
 
+- vague topic to literature map workflow
 - stable paragraph IDs for precise edits and review notes
 - Markdown chapter sources that can be versioned with Git
 - DOCX-first rendering for Word-centered departments
@@ -64,6 +65,9 @@ grad-thesis-toolkit/
 ├── consistency/
 │   ├── rules/           # Style, term, and chapter-contract guardrails
 │   └── reports/         # Generated audit reports
+├── literature/           # Topic workspaces for literature maps
+├── prompts/              # Reusable AI research partner prompts
+├── examples/             # Public placeholder outlines and demos
 ├── assets/
 │   ├── templates/docx/  # Generated or provided DOCX templates
 │   ├── library/         # Literature registry placeholders
@@ -77,10 +81,17 @@ grad-thesis-toolkit/
 ## Project Docs
 
 - [台灣碩專班從 0 開始指南](docs/taiwan-zero-start-guide.md)
+- [從模糊題目到文獻地圖](docs/vague-topic-to-literature-map.md)
+- [PSC literature map example](docs/psc-literature-map-example.md)
+- [AI research partner playbook](docs/research-partner-playbook.md)
+- [Outline intake workflow](docs/outline-intake-workflow.md)
+- [Taiwan professional master's mini sample](examples/tw-professional-master/README.md)
 - [12 週初稿衝刺計畫](docs/professional-master-12-week-plan.md)
 - [指導教授回饋循環](docs/advisor-review-workflow.md)
 - [Competitive positioning](docs/competitive-positioning.md)
+- [Codex for OSS fit assessment](docs/codex-oss-fit-assessment.md)
 - [Demo guide](docs/demo.md)
+- [Privacy review checklist](docs/privacy-review-checklist.md)
 - [Troubleshooting](docs/troubleshooting.md)
 - [Open-source roadmap](docs/open-source-roadmap.md)
 - [OSS readiness notes](docs/oss-readiness.md)
@@ -123,6 +134,34 @@ python scripts/thesis_consistency_audit.py
 python scripts/check_public_readiness.py
 ```
 
+For a single public-safe smoke demo, run:
+
+```powershell
+python scripts/run_demo.py
+```
+
+## From A Vague Topic To A Literature Map
+
+If a student only knows a keyword such as `PSC`, create a literature-map workspace first:
+
+```powershell
+python scripts/init_literature_map.py --topic "PSC" --domain-hint "port state control / maritime safety"
+```
+
+This creates a topic brief, search plan, seed-paper list, literature matrix, gap radar, advisor questions, and AI prompts under `literature/psc/`.
+
+The goal is to move from "I have a keyword" to "I can explain current research clusters, gaps, feasible data, and candidate research questions."
+
+## From An Outline To Advisor-Ready Next Steps
+
+If a student already has an outline, first extract citation candidates and decide whether to verify references before rewriting structure:
+
+```powershell
+python scripts/extract_citation_candidates.py --input examples/outline-with-citations.md
+```
+
+Use the output with [the outline intake workflow](docs/outline-intake-workflow.md) and [the research partner playbook](docs/research-partner-playbook.md). The intended sequence is: identify unverified references, pressure-test the outline, expand the literature map, then turn the strongest path into chapter-level writing tasks.
+
 ## Core Commands
 
 ```powershell
@@ -139,8 +178,14 @@ python scripts/thesis_md_pipeline_v2.py render
 python scripts/thesis_style_scan.py scan
 python scripts/thesis_consistency_audit.py
 
+# Extract citation candidates from a Markdown, text, or DOCX outline
+python scripts/extract_citation_candidates.py --input examples/outline-with-citations.md
+
 # Check whether the public template has obvious private-content risks
 python scripts/check_public_readiness.py
+
+# Run the full public-safe demo
+python scripts/run_demo.py
 ```
 
 ## Supported Outputs And Limits
@@ -148,6 +193,8 @@ python scripts/check_public_readiness.py
 Supported now:
 
 - body-only DOCX rendering from placeholder Markdown chapters
+- literature-map workspace initialization from a vague topic
+- citation-candidate extraction from Markdown, text, or DOCX outlines
 - generated thin DOCX template
 - public-readiness scan for obvious private-content risks
 - style and consistency reports
@@ -191,4 +238,4 @@ It does not prove that a user's customized thesis satisfies any university forma
 - Confirm no real thesis text, private data, or generated submission files are present.
 - Confirm all examples use generic names and dummy research topics.
 - Add repository topics such as `thesis`, `markdown`, `docx`, `academic-writing`, `graduate-school`, and `research-workflow`.
-- Create a first release after the render smoke test passes.
+- Create or update a release after the render smoke test passes.

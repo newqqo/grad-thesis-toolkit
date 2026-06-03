@@ -26,8 +26,31 @@
 先讀：
 
 1. [台灣碩專班從 0 開始指南](docs/taiwan-zero-start-guide.md)
-2. [12 週初稿衝刺計畫](docs/professional-master-12-week-plan.md)
-3. [指導教授回饋循環](docs/advisor-review-workflow.md)
+2. [從模糊題目到文獻地圖](docs/vague-topic-to-literature-map.md)
+3. [AI 研究夥伴 Playbook](docs/research-partner-playbook.md)
+4. [大綱匯入流程](docs/outline-intake-workflow.md)
+5. [台灣碩專班最小樣本](examples/tw-professional-master/README.md)
+6. [12 週初稿衝刺計畫](docs/professional-master-12-week-plan.md)
+7. [指導教授回饋循環](docs/advisor-review-workflow.md)
+8. [隱私審查 checklist](docs/privacy-review-checklist.md)
+
+如果你現在只知道一個關鍵字，例如 `PSC`，先不要急著寫第 1 章。先建立文獻地圖工作區：
+
+```powershell
+python scripts/init_literature_map.py --topic "PSC" --domain-hint "port state control / maritime safety"
+```
+
+再看示例：
+
+- [PSC 文獻地圖示例](docs/psc-literature-map-example.md)
+
+如果你已經有一份大綱，先不要急著讓 AI 全文改寫。先抓出大綱裡可能需要查證的引用：
+
+```powershell
+python scripts/extract_citation_candidates.py --input examples/outline-with-citations.md
+```
+
+接著依 [大綱匯入流程](docs/outline-intake-workflow.md) 決定下一步：先查證引用、做結構壓力測試、補文獻地圖，或把其中一節拆成可寫作任務。
 
 然後修改：
 
@@ -48,10 +71,18 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 
 python scripts/check_public_readiness.py
+python scripts/init_literature_map.py --topic "PSC" --domain-hint "port state control / maritime safety"
+python scripts/extract_citation_candidates.py --input examples/outline-with-citations.md
 python scripts/thesis_style_scan.py scan
 python scripts/thesis_consistency_audit.py
 python scripts/create_thin_template_v2.py
 python scripts/thesis_md_pipeline_v2.py render --skip-pdf
+```
+
+如果只想快速試跑公開安全 demo：
+
+```powershell
+python scripts/run_demo.py
 ```
 
 產出的 DOCX 在：
@@ -66,4 +97,3 @@ deliverables/docx/thesis_render_v2_latest.docx
 - 這不是代寫工具。
 - 不要把真實訪談、個資、未公開研究資料放到公開 repo。
 - 若要正式繳交，仍需依學校格式、指導教授要求、系所規定調整。
-

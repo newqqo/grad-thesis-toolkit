@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import argparse
+import datetime as dt
+import zipfile
 from pathlib import Path
 
 from docx import Document
@@ -14,6 +16,8 @@ from docx.shared import Inches, Pt
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "assets" / "templates" / "docx" / "thesis_template_thin.docx"
+FIXED_DOCX_TIMESTAMP = (2024, 1, 1, 0, 0, 0)
+FIXED_CORE_DATETIME = dt.datetime(2024, 1, 1, tzinfo=dt.timezone.utc)
 
 
 def add_field_run(paragraph, field_code: str) -> None:
@@ -46,9 +50,29 @@ def set_east_asia_font(style, east_asia: str) -> None:
     rfonts.set(qn("w:eastAsia"), east_asia)
 
 
+def normalize_docx_zip(path: Path) -> None:
+    original = path.read_bytes()
+    with zipfile.ZipFile(path, "r") as src:
+        infos = sorted(src.infolist(), key=lambda item: item.filename)
+        with zipfile.ZipFile(path.with_suffix(".tmp.docx"), "w", compression=zipfile.ZIP_DEFLATED) as dst:
+            for info in infos:
+                data = src.read(info.filename)
+                normalized = zipfile.ZipInfo(info.filename, FIXED_DOCX_TIMESTAMP)
+                normalized.compress_type = zipfile.ZIP_DEFLATED
+                normalized.external_attr = info.external_attr
+                dst.writestr(normalized, data)
+    tmp = path.with_suffix(".tmp.docx")
+    if tmp.read_bytes() != original:
+        tmp.replace(path)
+    else:
+        tmp.unlink()
+
+
 def build_template(output: Path) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     doc = Document()
+    doc.core_properties.created = FIXED_CORE_DATETIME
+    doc.core_properties.modified = FIXED_CORE_DATETIME
 
     section = doc.sections[0]
     section.start_type = WD_SECTION_START.NEW_PAGE
@@ -204,6 +228,7 @@ def build_template(output: Path) -> None:
     if doc.paragraphs:
         doc.paragraphs[0].clear()
     doc.save(output)
+    normalize_docx_zip(output)
 
 
 def main() -> None:

@@ -18,6 +18,7 @@ packages/
 # Private source material
 assets/library/files/pdfs/*
 assets/library/inbox/pdfs/*
+assets/library/registry/*
 assets/data/raw/*
 assets/data/processed/*
 source/front_matter/*.docx
@@ -25,6 +26,7 @@ source/front_matter/*.docx
 # Keep placeholder docs
 !assets/library/files/pdfs/README.md
 !assets/library/inbox/pdfs/README.md
+!assets/library/registry/README.md
 !consistency/reports/.gitkeep
 
 # Local/editor files
@@ -32,4 +34,3 @@ source/front_matter/*.docx
 .idea/
 .DS_Store
 Thumbs.db
-

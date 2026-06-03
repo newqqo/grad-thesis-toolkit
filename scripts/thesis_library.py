@@ -1163,13 +1163,12 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Optional[List[str]] = None) -> int:
-    ensure_structure()
-    migrate_existing_registry_and_files()
     parser = build_parser()
     args = parser.parse_args(argv)
+    ensure_structure()
+    migrate_existing_registry_and_files()
     return args.func(args)
 
 
 if __name__ == "__main__":
     sys.exit(main())
-
