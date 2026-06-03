@@ -67,7 +67,8 @@ def collect_candidates(text: str) -> list[dict[str, str]]:
 
 def render_markdown(candidates: list[dict[str, str]], source: Path) -> str:
     try:
-        display_source = source.resolve().relative_to(ROOT)
+        # Use POSIX separators so reports are identical across Linux/macOS/Windows.
+        display_source = source.resolve().relative_to(ROOT).as_posix()
     except ValueError:
         display_source = source.name
     lines = [

@@ -204,7 +204,8 @@ def split_sentences(line: str) -> list[str]:
 def read_sentences(source: Path) -> list[SentenceRecord]:
     records: list[SentenceRecord] = []
     for path in iter_source_files(source):
-        rel = path.relative_to(ROOT) if path.is_relative_to(ROOT) else path.name
+        # POSIX separators keep generated reports identical across platforms.
+        rel = path.relative_to(ROOT).as_posix() if path.is_relative_to(ROOT) else path.name
         current_chapter = file_chapter(path)
         text = read_plain_text(path)
         for line_no, line in enumerate(text.splitlines(), start=1):

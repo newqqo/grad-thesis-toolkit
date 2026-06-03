@@ -120,6 +120,15 @@ python scripts/thesis_md_pipeline_v2.py render --skip-pdf
 python scripts/run_demo.py
 ```
 
+想確認環境沒問題，可以跑自動化測試（Windows、macOS、Linux 都可以，不需要安裝 Word）：
+
+```powershell
+pip install -r requirements-dev.txt
+python -m pytest
+```
+
+除了 PDF 匯出（需要 Windows 上的 Word）以外，所有腳本都是純 Python，可跨平台執行；CI 也會在 Linux、macOS、Windows 上驗證。
+
 產出的 DOCX 在：
 
 ```text

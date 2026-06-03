@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.6 - Tests And Cross-Platform Reproducibility
+
+- Added a `pytest` test suite under `tests/` covering citation-candidate extraction, the public-readiness privacy scan, agent-adapter integrity, concept-audit primitives, consistency/style helpers, and an end-to-end DOCX render smoke test.
+- Added `requirements-dev.txt` and `pytest.ini` so contributors and agents can run `python -m pytest` with one setup step.
+- Expanded the CI workflow from a single Windows job to a matrix: unit tests on Linux and Windows, plus a workflow smoke test on Linux, macOS, and Windows. This proves the placeholder render works without Microsoft Word/COM on any platform.
+- Documented the cross-platform support boundary: the Markdown-to-DOCX render path is pure Python (`python-docx`); only optional PDF export needs Word on Windows.
+- Added a contributor "run the tests" path so Codex and other agents have a verifiable maintenance loop.
+- Added committed, public-safe sample outputs under `docs/sample-outputs/` (citation candidates, concept tree, promise-delivery) so reviewers can see what the toolkit produces without running it.
+- Made generated report source paths POSIX-style so reports are byte-identical across Linux, macOS, and Windows.
+
 ## 0.1.5 - First-Use Student Routing Refinements
 
 - Added first-use student-stage routing for no-topic, vague-direction, partial-draft, and near-final thesis users.

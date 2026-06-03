@@ -33,11 +33,13 @@ This project should therefore avoid claiming broad usage. The stronger argument 
 - Non-PSC AI teaching sample that shows the workflow can generalize beyond maritime topics.
 - Stable paragraph IDs and consistency rules for auditable AI edits.
 - Public-readiness scan that helps prevent accidental exposure of private drafts, PDFs, local paths, and credentials.
+- A `pytest` suite covering the privacy scan, citation extraction, agent-adapter integrity, concept-audit primitives, and an end-to-end render, giving an AI agent a verifiable maintenance loop.
+- Cross-platform CI (Linux, macOS, Windows) proving the toolkit installs and runs without Microsoft Word, so a reviewer on any OS can reproduce the demo.
 
 ## Weak Points
 
 - No public adoption signal yet, such as stars, forks, user feedback, or advisor/student testimonials.
-- No screenshots or short demo video yet.
+- No screenshots or short demo video yet (partly mitigated by committed text sample outputs under `docs/sample-outputs/`).
 - No school-specific adapter examples yet.
 - The literature-map workflow is scaffolded, not a live academic search engine.
 - It is not an official university thesis format and must not be described as one.
@@ -52,10 +54,16 @@ Avoid this angle:
 
 > This is a complete thesis-writing AI or an official thesis template.
 
+## Already In Place
+
+- Repository is published and marked as a GitHub template with descriptive topics.
+- Cross-platform CI (Linux, macOS, Windows) plus a `pytest` suite.
+- Committed public-safe sample outputs under `docs/sample-outputs/`.
+
 ## Next Improvements Before Applying
 
-1. Add screenshots of the literature-map workspace and rendered placeholder DOCX.
-2. Add one short demo recording or GIF.
-3. Collect feedback from at least 3 Taiwan graduate students, advisors, or lab peers.
-4. Add a sample issue showing a student workflow request and how maintainers would handle it.
-5. Collect real student or advisor feedback to complement the current simulated first-use report.
+These remaining items need the maintainer or real users and cannot be produced from code alone:
+
+1. Add screenshots of the literature-map workspace and rendered placeholder DOCX, and one short demo recording or GIF.
+2. Collect feedback from at least 3 Taiwan graduate students, advisors, or lab peers to complement the current simulated first-use report.
+3. Add a sample issue showing a student workflow request and how maintainers would handle it.

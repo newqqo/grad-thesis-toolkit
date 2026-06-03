@@ -79,6 +79,7 @@ grad-thesis-toolkit/
 │   ├── layout/          # Rendering/layout directives
 │   └── front_matter/    # Optional front matter source files
 ├── scripts/             # Build, render, audit, and packaging scripts
+├── tests/               # pytest suite for the core scripts (cross-platform)
 ├── consistency/
 │   ├── rules/           # Style, term, and chapter-contract guardrails
 │   └── reports/         # Generated audit reports
@@ -116,6 +117,7 @@ grad-thesis-toolkit/
 - [Competitive positioning](docs/competitive-positioning.md)
 - [Codex for OSS fit assessment](docs/codex-oss-fit-assessment.md)
 - [Demo guide](docs/demo.md)
+- [Sample outputs (see what the tool produces)](docs/sample-outputs/README.md)
 - [Privacy review checklist](docs/privacy-review-checklist.md)
 - [Troubleshooting](docs/troubleshooting.md)
 - [Open-source roadmap](docs/open-source-roadmap.md)
@@ -165,6 +167,37 @@ For a single public-safe smoke demo, run:
 ```powershell
 python scripts/run_demo.py
 ```
+
+6. Run the automated test suite (any OS, no Microsoft Word needed).
+
+```powershell
+pip install -r requirements-dev.txt
+python -m pytest
+```
+
+## Platform Support
+
+The Markdown-to-DOCX render path and every audit script are pure Python
+(`python-docx` and the standard library), so they run on Linux, macOS, and
+Windows. CI exercises the unit tests on Linux and Windows and the workflow
+smoke test on Linux, macOS, and Windows on every push and pull request.
+
+Only the optional PDF export (`scripts/thesis_pdf.py`) and Word round-trip
+(`scripts/thesis_word_update.py`) require Microsoft Word automation on Windows.
+Everything in the public demo works without it.
+
+## Tests
+
+```powershell
+pip install -r requirements-dev.txt
+python -m pytest
+```
+
+The suite under `tests/` covers the privacy/public-readiness scan,
+citation-candidate extraction, agent-adapter integrity, concept-audit
+primitives, consistency/style helpers, and an end-to-end placeholder DOCX
+render. It is the verifiable maintenance loop an AI agent (Codex, Claude,
+Gemini) can keep green when changing script behaviour.
 
 ## From A Vague Topic To A Literature Map
 
@@ -248,11 +281,12 @@ Supported now:
 - generated thin DOCX template
 - public-readiness scan for obvious private-content risks
 - style and consistency reports
-- GitHub Actions smoke test for placeholder DOCX rendering
+- pytest suite for the core scripts (runs on Linux, macOS, and Windows)
+- GitHub Actions smoke test for placeholder DOCX rendering on Linux, macOS, and Windows
 
 Known limits:
 
-- PDF export depends on Microsoft Word automation on Windows.
+- PDF export depends on Microsoft Word automation on Windows (the rest is cross-platform).
 - The public template does not include private school front matter files.
 - Citation rendering is not a full reference-management replacement.
 - This is a workflow toolkit, not an official university thesis format.
@@ -269,16 +303,20 @@ The `source/shadow` format uses stable paragraph markers such as `## p001`. This
 
 The toolkit is designed to make AI help auditable, not invisible.
 
-## What The CI Smoke Test Proves
+## What CI Proves
 
-The render smoke test checks that a clean checkout can:
+On every push and pull request, CI runs two job groups:
 
-1. install Python dependencies,
-2. pass the public-readiness scan,
-3. run style and consistency audits,
-4. render the placeholder DOCX.
+- `Unit tests` on Linux and Windows: the full `pytest` suite.
+- `Workflow smoke` on Linux, macOS, and Windows, where a clean checkout can:
+  1. install Python dependencies,
+  2. pass the public-readiness and agent-adapter checks,
+  3. run style, consistency, and concept audits,
+  4. render the placeholder DOCX without Microsoft Word.
 
-It does not prove that a user's customized thesis satisfies any university format requirement.
+This proves the toolkit installs and runs on all three major platforms with
+placeholder content. It does not prove that a user's customized thesis
+satisfies any university format requirement.
 
 ## Public Release Checklist
 

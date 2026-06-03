@@ -39,7 +39,8 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 - near-final oral-defense review guidance that separates mandatory fixes, recommended fixes, optional polish, and defensible oral-defense handling
 - advisor-review workflow guidance for Word/PDF feedback loops
 - style and public-readiness checks
-- GitHub Actions smoke testing for placeholder DOCX rendering
+- a cross-platform `pytest` suite for the core scripts so AI agents have a verifiable maintenance loop
+- GitHub Actions testing on Linux and Windows plus a placeholder-render smoke test on Linux, macOS, and Windows
 - contribution and security rules that discourage private thesis text, credentials, and personal data from entering the public repo
 
 ## Public Scope
@@ -76,7 +77,7 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 
 ## Project Maturity
 
-The repository is a public candidate at version 0.1.5. The core placeholder workflow runs locally and in CI: public readiness check, agent-adapter validation, style scan, consistency audit, concept hierarchy audit, promise-delivery audit, DOCX template generation, DOCX rendering, literature-map initialization, and outline citation-candidate extraction. The current iteration adds first-use simulation across four student stages and updates onboarding, agent routing, near-final review commands, and non-PSC examples accordingly. The next maturity step is collecting feedback from real Taiwan students and adding screenshots or a short demo recording.
+The repository is a public candidate at version 0.1.6. The core placeholder workflow runs locally and in CI: public readiness check, agent-adapter validation, style scan, consistency audit, concept hierarchy audit, promise-delivery audit, DOCX template generation, DOCX rendering, literature-map initialization, and outline citation-candidate extraction. The current iteration adds a cross-platform `pytest` suite and expands CI to run unit tests on Linux and Windows plus a workflow smoke test on Linux, macOS, and Windows, proving the toolkit reproduces on any platform without Microsoft Word. The next maturity step is collecting feedback from real Taiwan students and adding screenshots or a short demo recording.
 
 ## Risks and Mitigations
 
@@ -101,5 +102,5 @@ The repository is a public candidate at version 0.1.5. The core placeholder work
 
 - Repository URL: `https://github.com/newqqo/grad-thesis-toolkit`
 - License: MIT
-- Current release: 0.1.5 first-use student routing refinements
+- Current release: 0.1.6 tests and cross-platform reproducibility
 - Public demo: `python scripts/run_demo.py`

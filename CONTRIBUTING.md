@@ -19,6 +19,21 @@ Thank you for considering a contribution to the Graduate Thesis Workflow Toolkit
 5. Confirm the change does not include private research data or personal information.
 6. Use the [privacy review checklist](docs/privacy-review-checklist.md) before adding examples, demo files, or release assets.
 
+## Running The Tests
+
+The toolkit ships a `pytest` suite that covers the privacy scan, citation
+extraction, agent-adapter integrity, concept-audit primitives, and an
+end-to-end DOCX render. Run it on any platform (no Microsoft Word required):
+
+```powershell
+python -m pip install -r requirements-dev.txt
+python -m pytest
+```
+
+CI runs the same suite on Linux and Windows, plus a workflow smoke test on
+Linux, macOS, and Windows. Please keep the suite green and add a test when you
+change script behaviour.
+
 ## Pull Request Checklist
 
 - [ ] The change has a clear public-purpose description.
