@@ -6,7 +6,7 @@ authors:
   - family-names: "Project Maintainers"
     given-names: "Graduate Thesis Workflow Toolkit"
 abstract: "A reusable workflow toolkit for organizing graduate thesis writing, review, documentation, and reproducibility tasks with placeholder-first public examples."
-version: "0.1.8"
+version: "0.1.9"
 repository-code: "https://github.com/newqqo/grad-thesis-toolkit"
 url: "https://github.com/newqqo/grad-thesis-toolkit"
 license: "MIT"

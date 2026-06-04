@@ -65,6 +65,15 @@ def test_first_30_minutes_and_safe_paste_examples_are_present(text: str):
     assert "DEID_TEMPLATE" in text
 
 
+def test_accessibility_features_present(text: str):
+    """Lock in keyboard, motion, and color-scheme accessibility so they cannot rot."""
+    assert ":focus-visible" in text, "needs a visible keyboard focus indicator"
+    assert "prefers-reduced-motion" in text, "needs a reduced-motion accommodation"
+    assert "prefers-color-scheme" in text, "needs a light-mode accommodation"
+    assert "aria-controls" in text, "stage cards should reference the panel"
+    assert "panel.focus(" in text, "focus should move into the panel after selection"
+
+
 def test_no_private_trigger_strings(text: str):
     """The page must pass the same spirit as check_public_readiness."""
     assert not re.search(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}", text), "no email addresses"
