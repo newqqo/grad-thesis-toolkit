@@ -69,6 +69,8 @@ AI 安全模式：
 python scripts/init_literature_map.py --topic "PSC" --domain-hint "port state control / maritime safety"
 ```
 
+這會建立前 30 分鐘 checklist、題目釐清卡、搜尋計畫、seed papers、文獻矩陣、證據 registry、AI 使用紀錄、gap radar 與見老師問題。先把文獻標成候選與未驗證，再決定能不能寫進論文。
+
 再看示例：
 
 - [PSC 文獻地圖示例](docs/psc-literature-map-example.md)

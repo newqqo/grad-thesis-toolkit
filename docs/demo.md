@@ -33,10 +33,13 @@ python scripts/manuscript_concept_audit.py all --source examples/concept-drift-s
 Expected output:
 
 - `literature/psc/topic-brief.md`
+- `literature/psc/first-30-minutes.md`
 - agent adapter validation passes
 - `literature/psc/search-plan.md`
 - `literature/psc/seed-papers.md`
 - `literature/psc/literature-matrix.csv`
+- `literature/psc/evidence-registry.csv`
+- `literature/psc/ai-usage-log.md`
 - `literature/psc/gap-radar.md`
 - `literature/psc/advisor-questions.md`
 - `literature/psc/ai-prompts.md`
@@ -74,7 +77,7 @@ Use this structure for a short recorded or live walkthrough:
 
 - "This repository demonstrates a reusable graduate thesis workflow toolkit."
 - "The demo uses placeholder content only."
-- "A student can start from a vague keyword, create a literature-map workspace, and identify what must be verified before writing."
+- "A student can start from a vague keyword, create a literature-map workspace, record evidence status, and identify what must be verified before writing."
 - "A student can run concept hierarchy and promise-delivery checks before asking an advisor to review a draft."
 - "Different agents can use the same shared rules through Codex, Antigravity, Claude, and Gemini adapters."
 - "Markdown chapters use stable paragraph IDs so AI edits can be requested and reviewed precisely."

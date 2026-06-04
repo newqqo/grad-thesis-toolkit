@@ -62,6 +62,8 @@
 - relevance_to_my_thesis：跟我論文的關係
 - verification_status：是否已對照原文
 
+同時填寫 `evidence-registry.csv`。每一篇要進入矩陣的文獻，都需要留下 DOI/URL、搜尋來源、搜尋日期、查證狀態，以及支撐哪個矩陣欄位。
+
 ## Step 5: 缺口雷達 Gap Radar
 
 用 `gap-radar.md` 分類可能缺口：
@@ -76,3 +78,5 @@
 ## 安全規則
 
 AI 可以幫忙搜尋、分類與摘要，但任何要寫進論文的主張，都必須回到原文查證。
+
+每一次使用 AI 協助文獻搜尋、分類或改寫，都先記到 `ai-usage-log.md`。

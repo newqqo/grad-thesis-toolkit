@@ -60,12 +60,13 @@ This project targets that beginning stage.
 - Explicit privacy/public-readiness checks.
 - CI smoke test that proves the placeholder thesis can render.
 - Literature-map workspace generation from a vague keyword.
+- Source/evidence registry and AI usage log scaffolds that keep literature work traceable from the first session.
 - Citation-candidate extraction before outline rewriting.
 - Concept hierarchy and promise-delivery checks grounded in manuscript sentences.
 - Research-partner prompt/playbook that requires verification and advisor-facing next steps.
 - Cross-agent adapters that turn the workflow into reusable agent behavior rather than Python-only scripts.
 - Template repository and release artifact for quick adoption.
-- Static onboarding wizard that stays offline, requires no upload, and does not assume API keys or paid services.
+- Static onboarding wizard that stays offline, requires no upload, and does not assume external credentials or paid services.
 
 ## Claims We Should Avoid
 
@@ -83,5 +84,4 @@ This project targets that beginning stage.
 4. Add school-front-matter adapter documentation without committing private school forms.
 5. Add a short video or GIF demo of edit -> check -> render.
 6. Collect feedback from at least 3 Taiwan graduate students or advisors.
-7. Add source/evidence registry and AI usage log templates for traceable literature work.
-8. Add a first-30-minute checklist for each student stage in the onboarding page.
+7. Add a sample advisor-feedback loop fixture with placeholder comments and paragraph-level revisions.

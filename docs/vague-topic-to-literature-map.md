@@ -35,9 +35,12 @@ python scripts/init_literature_map.py --topic "PSC" --domain-hint "port state co
 ```text
 literature/psc/
 ├── topic-brief.md
+├── first-30-minutes.md
 ├── search-plan.md
 ├── seed-papers.md
 ├── literature-matrix.csv
+├── evidence-registry.csv
+├── ai-usage-log.md
 ├── gap-radar.md
 ├── advisor-questions.md
 └── ai-prompts.md
@@ -53,6 +56,14 @@ literature/psc/
 4. 把結果放入文獻矩陣。
 5. 回到原文驗證，不把 AI 摘要直接寫進論文。
 
+## 前 30 分鐘
+
+第一次使用時，先看 `first-30-minutes.md`。目標不是立刻寫章節，而是完成三個公開安全、可驗證的最小成果：
+
+- 一張 `topic-brief.md`，說清楚你真正能做什麼。
+- 三篇候選 seed papers，放進 `seed-papers.md`。
+- 三筆 `evidence-registry.csv` 紀錄，狀態先標為 `candidate` / `unverified`。
+
 ## 文獻矩陣最小欄位
 
 | 欄位 | 用途 |
@@ -66,6 +77,22 @@ literature/psc/
 | limitations / gap_claim | 找研究缺口 |
 | relevance_to_my_thesis | 連回自己的題目 |
 | verification_status | 確認是否已看過原文 |
+
+## 證據 Registry
+
+`evidence-registry.csv` 是用來防止「文獻看起來有，但其實沒查證」的表。每一篇文獻至少要記錄：
+
+- DOI 或 URL
+- 使用的資料庫或工具
+- 搜尋語與搜尋日期
+- 篩選狀態
+- 查證狀態
+- 支撐哪個文獻矩陣欄位
+- 對應原文頁碼、段落或短引文筆記
+
+## AI 使用紀錄
+
+`ai-usage-log.md` 用來記錄 AI agent 做了什麼、輸入是否已去識別化、輸出是否被採用，以及後續是否已由學生或老師查證。這不是要增加行政負擔，而是讓論文寫作過程可向老師、口委或學校規範說明。
 
 ## Gap Radar
 

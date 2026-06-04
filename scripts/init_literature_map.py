@@ -128,6 +128,8 @@ def search_plan(topic: str) -> str:
 - relevance_to_my_thesis：跟我論文的關係
 - verification_status：是否已對照原文
 
+同時填寫 `evidence-registry.csv`。每一篇要進入矩陣的文獻，都需要留下 DOI/URL、搜尋來源、搜尋日期、查證狀態，以及支撐哪個矩陣欄位。
+
 ## Step 5: 缺口雷達 Gap Radar
 
 用 `gap-radar.md` 分類可能缺口：
@@ -142,6 +144,8 @@ def search_plan(topic: str) -> str:
 ## 安全規則
 
 AI 可以幫忙搜尋、分類與摘要，但任何要寫進論文的主張，都必須回到原文查證。
+
+每一次使用 AI 協助文獻搜尋、分類或改寫，都先記到 `ai-usage-log.md`。
 """
 
 
@@ -168,6 +172,66 @@ def literature_matrix() -> str:
         "data_source,key_findings,limitations,gap_claim,relevance_to_my_thesis,"
         "verification_status,notes\n"
     )
+
+
+def evidence_registry() -> str:
+    return (
+        "source_id,citation_or_title,doi_or_url,database_or_tool,search_query,"
+        "search_date,screening_status,verification_status,evidence_location,"
+        "supporting_quote_or_note,matrix_fields_supported,human_verified_by,notes\n"
+        "S001,,,,,,candidate,unverified,,,,,\n"
+    )
+
+
+def ai_usage_log() -> str:
+    return """# AI 使用紀錄 AI Usage Log
+
+Use this log when an AI agent helps with topic framing, literature mapping, outline repair, or chapter revision. It is a disclosure aid, not proof that the output is correct.
+
+| Date | Agent/tool | Task | Input scope | Private text removed? | Output used? | Human verification | Disclosure note |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| YYYY-MM-DD | | | de-identified summary / outline / short excerpt | yes/no | accepted / revised / rejected | pending / checked against source / advisor reviewed | |
+
+## Rules
+
+- Do not paste private interview transcripts, personal identifiers, school-only forms, or unpublished full chapters into public tools.
+- Treat literature suggestions as candidates until the original source is checked.
+- Record rejected AI outputs too when they influenced your next step.
+- Keep the final academic judgment with the student and advisor.
+"""
+
+
+def first_30_minutes(topic: str) -> str:
+    return f"""# 前 30 分鐘 Checklist
+
+題目或關鍵字：{topic}
+
+This checklist gives a first-time student a concrete first session. It does not require external credentials, paid services, uploads, or private thesis text.
+
+## 0-5 分鐘：安全邊界
+
+- [ ] 只使用去識別化摘要、公開資料、章節大綱或短段落。
+- [ ] 不貼私人訪談逐字稿、個資、真實公司內部資料、未公開完整章節。
+- [ ] 在 `ai-usage-log.md` 開一筆紀錄。
+
+## 5-10 分鐘：釐清自己真正能做什麼
+
+- [ ] 填 `topic-brief.md` 的五句話釐清。
+- [ ] 寫下可取得資料來源，而不是只寫想研究的概念。
+- [ ] 標出目前最不確定的一件事。
+
+## 10-20 分鐘：建立可查證的文獻入口
+
+- [ ] 依 `search-plan.md` 產生 3-5 組搜尋語。
+- [ ] 找 3 篇可能的 seed papers，先放進 `seed-papers.md`。
+- [ ] 每篇都同步登錄到 `evidence-registry.csv`，狀態先標 `candidate` / `unverified`。
+
+## 20-30 分鐘：準備見老師
+
+- [ ] 在 `gap-radar.md` 寫下 1-2 個可能缺口。
+- [ ] 在 `advisor-questions.md` 寫下 3 個要問老師的問題。
+- [ ] 決定下一次工作只做一件事：查證文獻、補資料來源、縮小題目，或寫一頁初步大綱。
+"""
 
 
 def gap_radar(topic: str) -> str:
@@ -281,6 +345,9 @@ def build(args: argparse.Namespace) -> Path:
     write_once(target / "search-plan.md", search_plan(topic), overwrite)
     write_once(target / "seed-papers.md", seed_papers(), overwrite)
     write_once(target / "literature-matrix.csv", literature_matrix(), overwrite)
+    write_once(target / "evidence-registry.csv", evidence_registry(), overwrite)
+    write_once(target / "ai-usage-log.md", ai_usage_log(), overwrite)
+    write_once(target / "first-30-minutes.md", first_30_minutes(topic), overwrite)
     write_once(target / "gap-radar.md", gap_radar(topic), overwrite)
     write_once(target / "advisor-questions.md", advisor_questions(topic), overwrite)
     write_once(target / "ai-prompts.md", ai_prompts(topic), overwrite)

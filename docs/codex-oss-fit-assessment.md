@@ -23,11 +23,12 @@ The public [Codex for Open Source](https://developers.openai.com/community/codex
 - Traditional Chinese onboarding for Taiwan students.
 - DOCX-first output for Word-centered advisor review.
 - Vague-topic-to-literature-map workflow for students who only have a keyword.
+- Traceable literature intake artifacts: first-30-minute checklist, source/evidence registry, and AI usage log for each generated topic workspace.
 - Outline citation-candidate extraction before structural rewriting.
 - Concept hierarchy and theoretical promise-delivery checks grounded in manuscript sentences.
 - Cross-agent adapters for Codex, Antigravity, Claude Code, and Gemini CLI-style workflows.
 - First-use stage routing based on simulated no-topic, vague-direction, partial-draft, and near-final student journeys.
-- Static onboarding wizard that remains a guide layer: no upload, no backend, no API key, no paid-service dependency.
+- Static onboarding wizard that remains a guide layer: no upload, no backend, no external credentials, no paid-service dependency.
 - Competitor survey showing that adjacent tools are strong at formatting, literature search, citation maps, or systematic-review screening, while this project targets the missing workflow layer between vague topic and advisor-reviewable DOCX draft.
 - Near-final oral-defense review commands that separate mandatory fixes from optional polish.
 - Non-PSC AI teaching sample that shows the workflow can generalize beyond maritime topics.
@@ -61,6 +62,7 @@ Avoid this angle:
 - Cross-platform CI (Linux, macOS, Windows) plus a `pytest` suite.
 - Committed public-safe sample outputs under `docs/sample-outputs/`.
 - Static onboarding wizard under `docs/onboarding.html`.
+- First-30-minute onboarding outcomes, safe/unsafe paste examples, source/evidence registry, and AI usage log scaffolds.
 - Issue templates, contribution guidance, security policy, citation metadata, and public roadmap.
 - Competitor survey and improvement backlog under `docs/competitor-survey-2026.md`.
 
@@ -71,5 +73,4 @@ These remaining items need the maintainer or real users and cannot be produced f
 1. Add screenshots of the literature-map workspace and rendered placeholder DOCX, and one short demo recording or GIF.
 2. Collect feedback from at least 3 Taiwan graduate students, advisors, or lab peers to complement the current simulated first-use report.
 3. Add a sample issue showing a student workflow request and how maintainers would handle it.
-4. Add a source/evidence registry and AI usage log template so literature work remains traceable.
-5. Add a first-30-minute onboarding checklist for each student stage.
+4. Add a small visual walkthrough that shows the static onboarding page, the generated topic workspace, and the rendered DOCX artifact.

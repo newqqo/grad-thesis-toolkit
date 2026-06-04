@@ -57,6 +57,14 @@ def test_copy_failure_state_is_visible(text: str):
     assert "document.execCommand(\"copy\")" in text
 
 
+def test_first_30_minutes_and_safe_paste_examples_are_present(text: str):
+    assert "前 30 分鐘要完成" in text
+    assert "安全貼給 AI 的範例" in text
+    assert "去識別化摘要" in text
+    assert "完整私人論文" in text
+    assert "DEID_TEMPLATE" in text
+
+
 def test_no_private_trigger_strings(text: str):
     """The page must pass the same spirit as check_public_readiness."""
     assert not re.search(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}", text), "no email addresses"

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.8 - Traceable Literature Intake
+
+- Expanded `scripts/init_literature_map.py` so a vague keyword now creates traceability artifacts alongside the topic brief and literature matrix: `first-30-minutes.md`, `evidence-registry.csv`, and `ai-usage-log.md`.
+- Added regression tests for the literature-map initializer, including evidence registry columns, first-session safety guidance, and AI usage log verification fields.
+- Updated the static onboarding wizard with per-stage "first 30 minutes" outcomes and safe/unsafe examples for de-identified AI collaboration.
+- Updated the vague-topic workflow documentation so students treat seed papers as candidates, record evidence locations, and log AI-assisted literature work before writing claims.
+- Updated the public demo output summary to show the new first-session and traceability artifacts.
+
 ## 0.1.7 - Static Onboarding Wizard
 
 - Added `docs/onboarding.html`: a single-file, framework-free static onboarding layer. A first-time student picks one of four stages (no topic, vague direction, partial draft, near final) and gets the prompt to paste into their own AI agent, the matching repo docs, an optional Python command, and an explicit "do not do this yet" list — with copy buttons. It is intentionally a navigation layer, not a web app: no upload, no backend, no network calls; open the file directly or serve `docs/` with GitHub Pages.

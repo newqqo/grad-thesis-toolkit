@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>論文工具新手導覽 · Graduate Thesis Toolkit</title>
 <meta name="description" content="台灣碩士生第一次使用的導覽：先選你現在的狀態，拿到要貼給 AI 的 prompt、對應文件與可選指令。不上傳、不儲存任何內容。" />
+<link rel="icon" href="data:," />
 <style>
   :root {
     --bg: #0f172a;
@@ -114,6 +115,17 @@
     text-decoration: none;
   }
   .avoid { color: #fca5a5; }
+  .example-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+  .example {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #0b1220;
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+  .example strong { display: block; margin-bottom: 4px; }
+  .example.safe strong { color: var(--ok); }
+  .example.unsafe strong { color: #fca5a5; }
   footer { margin-top: 40px; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 16px; }
   footer code { background: #0b1220; padding: 1px 6px; border-radius: 5px; }
 </style>
@@ -143,6 +155,16 @@
 </div>
 
 <script>
+const DEID_TEMPLATE = `請先用去識別化方式協助我，不要要求我貼完整私人論文。
+
+我的階段：
+我的研究方向或關鍵字：
+我能公開描述的資料來源：
+我不能公開的內容：
+我希望你幫我完成的下一個小成果：
+
+請只根據以上資訊回答；所有文獻、數據、引用都先標示為未驗證候選。`;
+
 const STAGES = [
   {
     id: "no-topic",
@@ -153,6 +175,11 @@ const STAGES = [
     next: [
       "先準備：你的工作/實務經驗、能取得的資料、指導教授偏好、時間限制、可接受的方法。",
       "讓 AI 用問題訪談你，最後給你幾個「可行、做得到、老師可能接受」的方向。",
+    ],
+    first30: [
+      "寫下 3 個實務問題，不急著命名題目。",
+      "列出可取得與不可公開的資料。",
+      "完成一頁見老師前討論 memo。",
     ],
     prompt: "我是台灣碩士生，還沒有論文題目。請先不要幫我想題目，改成用 8-10 個問題訪談我：我的工作或實務經驗、我能取得的資料、指導教授偏好的方法、我的時間限制、可接受的研究方法。問完後，給我 3-5 個可行研究方向，每個附上風險與下一步，並全部標示為『待確認，需與指導教授討論』。不要編造文獻或數據。",
     docs: [
@@ -175,6 +202,11 @@ const STAGES = [
     next: [
       "把關鍵字變成可搜尋的種子論文與研究叢集。",
       "找出國內外研究缺口，決定你能站在哪裡，再整理見老師要問的問題。",
+    ],
+    first30: [
+      "建立 literature map 工作區。",
+      "找 3 篇候選 seed papers，先標未驗證。",
+      "把每篇候選文獻登錄到 evidence registry。",
     ],
     prompt: "我想做的方向是「（在這裡填你的關鍵字，例如 PSC / ESG / AI 教學 / 數位轉型）」，但還很模糊。請幫我規劃：種子論文搜尋邏輯、可能的研究叢集、國內外研究缺口、可行的資料與方法，以及見指導教授前要問的問題。所有論文建議都標示為『未驗證候選』，不要編造文獻、作者或 DOI。",
     docs: [
@@ -199,6 +231,11 @@ const STAGES = [
       "檢查概念位階是否漂移；第 1 章的理論在第 2/4/5 章有沒有被支撐、操作、回收。",
       "拿到最小改動的修正建議，而不是整章重寫。",
     ],
+    first30: [
+      "只貼去識別化大綱或短段落。",
+      "先抽引用候選，不改寫正文。",
+      "列出 3 個最可能被老師追問的概念問題。",
+    ],
     prompt: "我已經有大綱或部分章節草稿。請先不要全文改寫。我會只提供去識別化後的大綱、章節摘要或短段落。請依序：(1) 找出可能需要查證的引用並標為『未驗證』；(2) 檢查我的概念位階是否漂移（上位場域／分析單位／操作工具）；(3) 檢查第 1 章提出的理論，第 2 章有沒有支撐、第 4 章有沒有真的操作、第 5 章有沒有回收。請回給我最小改動的修正建議，每一項都附上我的原句或章節依據。",
     docs: [
       { label: "大綱匯入流程", relpath: "docs/outline-intake-workflow.md" },
@@ -221,6 +258,11 @@ const STAGES = [
       "聚焦會在口試被打的點：沒被支撐的概念、沒被操作的框架、結論過度宣稱、引用與隱私風險。",
       "把問題分級，不要全部一視同仁。",
       "如果要貼給 AI，先用去識別化摘要或短段落；公開前再做一次隱私檢查。",
+    ],
+    first30: [
+      "先做概念與理論交付檢查。",
+      "把問題分成必修、建議修、可不修、可答辯說明。",
+      "檢查是否有私人內容或未驗證引用準備被公開。",
     ],
     prompt: "我接近完稿，有第 1-5 章。請以嚴格口試委員角度審查，聚焦會被打的地方：沒被支撐的概念、沒被操作的框架、結論過度宣稱、引用風險、隱私/公開風險。請把結果分成四類：必修、建議修、可不修、可在口試現場用說明處理。每一項都附上章節或段落依據，不要客套帶過。",
     docs: [
@@ -307,6 +349,31 @@ function renderPanel(stage) {
   stage.next.forEach((t) => ul.appendChild(el("li", {}, t)));
   nextBlock.appendChild(ul);
   panel.appendChild(nextBlock);
+
+  // First 30 minutes
+  const thirtyBlock = el("div", { class: "block" });
+  thirtyBlock.appendChild(el("div", { class: "label" }, "前 30 分鐘要完成"));
+  const thirtyList = el("ul", { class: "clean" });
+  stage.first30.forEach((t) => thirtyList.appendChild(el("li", {}, t)));
+  thirtyBlock.appendChild(thirtyList);
+  panel.appendChild(thirtyBlock);
+
+  // Safe paste pattern
+  const safeBlock = el("div", { class: "block" });
+  safeBlock.appendChild(el("div", { class: "label" }, "安全貼給 AI 的範例"));
+  const examples = el("div", { class: "example-grid" }, [
+    el("div", { class: "example safe" }, [
+      el("strong", {}, "可以"),
+      el("span", {}, "去識別化摘要、章節大綱、短段落、公開資料、候選文獻清單。"),
+    ]),
+    el("div", { class: "example unsafe" }, [
+      el("strong", {}, "不要"),
+      el("span", {}, "完整私人論文、訪談逐字稿、真實姓名、公司內部資料、未公開研究資料。"),
+    ]),
+  ]);
+  safeBlock.appendChild(examples);
+  safeBlock.appendChild(copyButton(() => DEID_TEMPLATE));
+  panel.appendChild(safeBlock);
 
   // Prompt
   const promptBlock = el("div", { class: "block codebox" });

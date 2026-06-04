@@ -212,7 +212,7 @@ If a student only knows a keyword such as `PSC`, create a literature-map workspa
 python scripts/init_literature_map.py --topic "PSC" --domain-hint "port state control / maritime safety"
 ```
 
-This creates a topic brief, search plan, seed-paper list, literature matrix, gap radar, advisor questions, and AI prompts under `literature/psc/`.
+This creates a first-30-minute checklist, topic brief, search plan, seed-paper list, literature matrix, evidence registry, AI usage log, gap radar, advisor questions, and AI prompts under `literature/psc/`.
 
 The goal is to move from "I have a keyword" to "I can explain current research clusters, gaps, feasible data, and candidate research questions."
 

@@ -32,13 +32,13 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 - DOCX rendering through a generated thin Word template
 - consistency rules for chapter responsibilities, canonical terms, and writing style
 - Traditional Chinese onboarding for Taiwan zero-start and professional master's workflows
-- a vague-topic-to-literature-map initializer that creates a topic brief, search plan, seed-paper list, literature matrix, gap radar, advisor questions, and AI prompts
+- a vague-topic-to-literature-map initializer that creates a first-30-minute checklist, topic brief, search plan, seed-paper list, literature matrix, source/evidence registry, AI usage log, gap radar, advisor questions, and AI prompts
 - an outline intake workflow that extracts citation candidates before structural rewriting, so students can verify evidence before expanding claims
 - a reusable AI research partner playbook and Traditional Chinese prompt template for guided menus, pressure tests, literature mapping, and chapter-level writing tasks
 - concept hierarchy and theoretical promise-delivery checks that use manuscript sentences to detect term drift, unsupported high-level concepts, and chapter-level delivery gaps
 - cross-agent adapters for Codex, Antigravity, Claude Code, and Gemini CLI-style workflows
 - first-use stage routing for no-topic, vague-direction, partial-draft, and near-final students
-- a static onboarding wizard that gives each stage a copyable agent prompt, relevant docs, and optional commands without upload, backend, API key, or paid-service dependency
+- a static onboarding wizard that gives each stage a copyable agent prompt, relevant docs, first-30-minute outcomes, safe paste examples, and optional commands without upload, backend, external credentials, or paid-service dependency
 - near-final oral-defense review guidance that separates mandatory fixes, recommended fixes, optional polish, and defensible oral-defense handling
 - advisor-review workflow guidance for Word/PDF feedback loops
 - style and public-readiness checks
@@ -50,7 +50,7 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 
 - reusable workflow templates for graduate research writing
 - Taiwan-focused zero-start writing guides in Traditional Chinese
-- literature mapping workflow for students who only have a keyword
+- literature mapping workflow for students who only have a keyword, including source/evidence registry and AI usage log scaffolds
 - outline intake and citation-candidate extraction for students who already have a partial plan
 - prompt templates that keep AI assistance skeptical, source-aware, and advisor-reviewable
 - concept-audit workflows that help students verify whether chapter 1 concepts are supported, operated, and recovered across the thesis
@@ -81,7 +81,7 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 
 ## Project Maturity
 
-The repository is a public candidate at version 0.1.7. The core placeholder workflow runs locally and in CI: public readiness check, agent-adapter validation, style scan, consistency audit, concept hierarchy audit, promise-delivery audit, DOCX template generation, DOCX rendering, literature-map initialization, and outline citation-candidate extraction. The current iteration adds a static onboarding wizard, a cross-platform `pytest` suite, and CI that runs unit tests on Linux and Windows plus a workflow smoke test on Linux, macOS, and Windows, proving the toolkit reproduces on any platform without Microsoft Word. The next maturity step is collecting feedback from real Taiwan students and adding screenshots or a short demo recording.
+The repository is a public candidate at version 0.1.8. The core placeholder workflow runs locally and in CI: public readiness check, agent-adapter validation, style scan, consistency audit, concept hierarchy audit, promise-delivery audit, DOCX template generation, DOCX rendering, literature-map initialization, traceable literature intake artifacts, and outline citation-candidate extraction. The current iteration adds first-session literature traceability scaffolds, a static onboarding wizard, a cross-platform `pytest` suite, and CI that runs unit tests on Linux and Windows plus a workflow smoke test on Linux, macOS, and Windows, proving the toolkit reproduces on any platform without Microsoft Word. The next maturity step is collecting feedback from real Taiwan students and adding screenshots or a short demo recording.
 
 ## Risks and Mitigations
 
@@ -106,5 +106,5 @@ The repository is a public candidate at version 0.1.7. The core placeholder work
 
 - Repository URL: `https://github.com/newqqo/grad-thesis-toolkit`
 - License: MIT
-- Current release: 0.1.7 static onboarding wizard
+- Current release: 0.1.8 traceable literature intake
 - Public demo: `python scripts/run_demo.py`

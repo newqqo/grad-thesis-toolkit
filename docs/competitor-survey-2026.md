@@ -32,7 +32,7 @@ The biggest opportunity is the stage before formatting: students often do not kn
 1. Visual proof: many template projects show screenshots, sample PDFs, or rendered output. This repository still needs stronger visual evidence.
 2. Format confidence: Taiwan LaTeX templates can point to school-aware formats. This project must avoid claiming official compliance, but should still document front-matter adapter patterns.
 3. Literature discovery: tools such as Elicit, Rayyan, Litmaps, ResearchRabbit, Connected Papers, ASReview, and Open Knowledge Maps are better at search, screening, citation graphs, and extraction.
-4. First-click clarity: beginner-facing projects often show one exact first action and one visible result. This repository has improved with `docs/onboarding.html`, but should add a first-30-minute checklist.
+4. First-click clarity: beginner-facing projects often show one exact first action and one visible result. This repository has improved with `docs/onboarding.html` and first-30-minute checklists, but still needs screenshots or a short visual walkthrough.
 5. Adoption proof: mature projects have visible users, stars, forks, institutional links, or testimonials. This repository currently has simulated first-use feedback, not real student feedback.
 
 ## What This Project Can Defend
@@ -41,15 +41,15 @@ The biggest opportunity is the stage before formatting: students often do not kn
 2. Taiwan professional master's context: it acknowledges limited time, work-based topics, and Word/PDF advisor feedback.
 3. DOCX-first traceability: stable paragraph IDs and render checks support a Word-centered review cycle without losing source control.
 4. Cross-agent operation: Codex, Claude Code, Gemini CLI, Antigravity, and similar agents can follow shared rules instead of one Python-only path.
-5. Privacy-first public examples: onboarding and demos avoid uploads, private thesis text, API keys, and paid-service assumptions.
-6. Evidence discipline: citation candidates, concept hierarchy checks, and theoretical promise-delivery checks reduce fake citations and unsupported high-level claims.
+5. Privacy-first public examples: onboarding and demos avoid uploads, private thesis text, external credentials, and paid-service assumptions.
+6. Evidence discipline: citation candidates, source/evidence registry, AI usage log, concept hierarchy checks, and theoretical promise-delivery checks reduce fake citations and unsupported high-level claims.
 
 ## Improvement Backlog
 
 ### P0: Keep The Boundary Clear
 
-- Keep `docs/onboarding.html` static: no upload, no account, no backend, no API key, no network request.
-- Add stronger safe/unsafe paste examples so students know how to de-identify thesis text before asking an AI agent for help.
+- Keep `docs/onboarding.html` static: no upload, no account, no backend, no external credentials, no network request.
+- Add stronger safe/unsafe paste examples so students know how to de-identify thesis text before asking an AI agent for help. Current status: added to `docs/onboarding.html`.
 - Avoid all claims of official school-format compliance.
 - Avoid claiming that the repository can perform live literature search better than dedicated tools.
 
@@ -60,6 +60,7 @@ The biggest opportunity is the stage before formatting: students often do not kn
    - vague keyword
    - partial outline or chapter
    - near-final draft
+   Current status: added to the onboarding page; vague-topic workspaces also include `first-30-minutes.md`.
 2. Add visual proof:
    - screenshot of the onboarding page
    - screenshot of the generated literature-map workspace
@@ -71,6 +72,7 @@ The biggest opportunity is the stage before formatting: students often do not kn
    - whether private text was removed
    - output used or rejected
    - human verification status
+   Current status: generated as `ai-usage-log.md` by `scripts/init_literature_map.py`.
 4. Add a source/evidence registry:
    - DOI or URL
    - database or tool used
@@ -78,6 +80,7 @@ The biggest opportunity is the stage before formatting: students often do not kn
    - verification status
    - evidence quote/page/paragraph
    - matrix fields supported by the source
+   Current status: generated as `evidence-registry.csv` by `scripts/init_literature_map.py`.
 5. Add a sample advisor-feedback loop:
    - public placeholder Word/PDF comments
    - mapped paragraph IDs
