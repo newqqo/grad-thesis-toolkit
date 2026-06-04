@@ -18,6 +18,7 @@
     --warn-bg: #422006;
     --warn-ink: #fcd34d;
     --ok: #34d399;
+    --danger: #fca5a5;
     --border: #334155;
     --radius: 14px;
   }
@@ -114,7 +115,7 @@
     font-size: 0.88rem;
     text-decoration: none;
   }
-  .avoid { color: #fca5a5; }
+  .avoid { color: var(--danger); }
   .example-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
   .example {
     border: 1px solid var(--border);
@@ -125,9 +126,47 @@
   }
   .example strong { display: block; margin-bottom: 4px; }
   .example.safe strong { color: var(--ok); }
-  .example.unsafe strong { color: #fca5a5; }
+  .example.unsafe strong { color: var(--danger); }
   footer { margin-top: 40px; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 16px; }
   footer code { background: #0b1220; padding: 1px 6px; border-radius: 5px; }
+
+  /* Keyboard accessibility: always show where focus is. */
+  .card:focus-visible,
+  .copy:focus-visible,
+  .doclinks a:focus-visible,
+  a:focus-visible,
+  .panel:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* Respect users who ask for less motion. */
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+    .card:hover { transform: none; }
+  }
+
+  /* Light mode for phones in bright rooms / light-theme users. */
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --panel-2: #eef2f7;
+      --ink: #0f172a;
+      --muted: #475569;
+      --accent: #0369a1;
+      --accent-ink: #ffffff;
+      --warn-bg: #fef9c3;
+      --warn-ink: #854d0e;
+      --ok: #047857;
+      --danger: #b91c1c;
+      --border: #cbd5e1;
+    }
+    .privacy { border-color: #d4a72c; }
+    .privacy strong { color: #713f12; }
+    pre, .example, footer code { background: #f1f5f9; color: #0f172a; }
+    pre { color: #0f172a; }
+  }
 </style>
 </head>
 <body>
@@ -145,7 +184,7 @@
   <h2 class="section">① 選擇你現在的狀態</h2>
   <div class="cards" id="cards"></div>
 
-  <div class="panel" id="panel" aria-live="polite"></div>
+  <div class="panel" id="panel" role="region" aria-label="下一步建議" aria-live="polite"></div>
 
   <footer>
     <p>這份導覽不是學校格式產生器，也不是代寫工具。它只幫你先選對下一步；更完整的範例見
@@ -335,6 +374,18 @@ function copyButton(getText) {
   return btn;
 }
 
+function prefersReducedMotion() {
+  return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function focusPanel(panel) {
+  try {
+    panel.focus({ preventScroll: true });
+  } catch (e) {
+    panel.focus();
+  }
+}
+
 function renderPanel(stage) {
   const panel = document.getElementById("panel");
   panel.innerHTML = "";
@@ -410,13 +461,16 @@ function renderPanel(stage) {
   panel.appendChild(avoidBlock);
 
   panel.classList.add("open");
-  panel.scrollIntoView({ behavior: "smooth", block: "start" });
+  panel.scrollIntoView({ behavior: prefersReducedMotion() ? "auto" : "smooth", block: "start" });
+  // Move focus into the panel so keyboard and screen-reader users land on the answer.
+  panel.setAttribute("tabindex", "-1");
+  focusPanel(panel);
 }
 
 function init() {
   const cards = document.getElementById("cards");
   STAGES.forEach((stage) => {
-    const card = el("button", { class: "card", type: "button", "aria-expanded": "false", "data-id": stage.id }, [
+    const card = el("button", { class: "card", type: "button", "aria-expanded": "false", "aria-controls": "panel", "data-id": stage.id }, [
       el("div", { class: "badge" }, `路徑 ${stage.badge}`),
       el("h3", {}, stage.title),
       el("p", {}, stage.teaser),

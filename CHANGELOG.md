@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.9 - Onboarding Accessibility
+
+- Made the static onboarding wizard accessible: a visible keyboard `:focus-visible` indicator, a `prefers-reduced-motion` accommodation (disables hover transforms and smooth scroll), and a `prefers-color-scheme: light` theme for phones in bright rooms and light-theme users.
+- Selecting a stage now moves focus into the results panel (with `role="region"` and `aria-controls`) so keyboard and screen-reader users land on the answer.
+- Added a fallback for browsers that do not support focus options, and tuned light-mode danger/avoid colors for readable contrast.
+- Extended `tests/test_onboarding_html.py` to lock in these accessibility features so they cannot silently regress.
+
 ## 0.1.8 - Traceable Literature Intake
 
 - Expanded `scripts/init_literature_map.py` so a vague keyword now creates traceability artifacts alongside the topic brief and literature matrix: `first-30-minutes.md`, `evidence-registry.csv`, and `ai-usage-log.md`.

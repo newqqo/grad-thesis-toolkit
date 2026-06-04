@@ -11,6 +11,7 @@ def test_visual_proof_screenshots_exist():
     expected = [
         screenshots / "onboarding-v0.1.8-desktop.png",
         screenshots / "onboarding-v0.1.8-mobile.png",
+        screenshots / "onboarding-v0.1.9-light.png",
     ]
     for path in expected:
         assert path.exists(), f"missing visual proof screenshot: {path.name}"
@@ -21,8 +22,9 @@ def test_visual_proof_doc_links_to_release_and_screenshots():
     text = (ROOT / "docs" / "visual-proof.md").read_text(encoding="utf-8")
     assert "assets/screenshots/onboarding-v0.1.8-desktop.png" in text
     assert "assets/screenshots/onboarding-v0.1.8-mobile.png" in text
-    assert "releases/tag/v0.1.8" in text
-    assert "45 tests passed" in text
+    assert "assets/screenshots/onboarding-v0.1.9-light.png" in text
+    assert "releases/tag/v0.1.9" in text
+    assert "49 tests passed" in text
 
 
 def test_student_workflow_issue_template_is_public_safe():
