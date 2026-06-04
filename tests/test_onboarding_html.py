@@ -18,6 +18,7 @@ HTML = ROOT / "docs" / "onboarding.html"
 
 @pytest.fixture(scope="module")
 def text() -> str:
+    assert HTML.exists(), "docs/onboarding.html should exist"
     return HTML.read_text(encoding="utf-8")
 
 
@@ -45,8 +46,14 @@ def test_is_static_and_safe(text: str):
     assert "<form" not in lowered, "onboarding must not contain a form"
     assert "type=\"file\"" not in lowered and "type='file'" not in lowered
     assert "xmlhttprequest" not in lowered and "fetch(" not in lowered, "must not call the network"
+    assert "https://github.com" not in lowered, "doc links should work as local relative paths"
     # Privacy notice must be present.
     assert "不會上傳" in text and "不會儲存" in text
+
+
+def test_copy_failure_state_is_visible(text: str):
+    assert "複製失敗" in text
+    assert "document.execCommand(\"copy\")" in text
 
 
 def test_no_private_trigger_strings(text: str):

@@ -103,6 +103,7 @@
   }
   .copy:active { transform: translateY(1px); }
   .copy.done { background: var(--ok); }
+  .copy.failed { background: #f87171; color: #2b0707; }
   .doclinks { display: flex; flex-wrap: wrap; gap: 8px; }
   .doclinks a {
     background: var(--panel-2);
@@ -137,14 +138,12 @@
   <footer>
     <p>這份導覽不是學校格式產生器，也不是代寫工具。真正的審查請回到 repo 的 agent 工作流與
     <code>scripts/</code> 檢查腳本。完整可執行範例見
-    <a href="https://github.com/newqqo/grad-thesis-toolkit/blob/main/docs/walkthrough-end-to-end.zh-TW.md">walkthrough-end-to-end.zh-TW.md</a>。</p>
-    <p>離線使用：直接用瀏覽器開啟此檔即可，不需要網路或伺服器。</p>
+    <a href="walkthrough-end-to-end.zh-TW.md">walkthrough-end-to-end.zh-TW.md</a>。</p>
+    <p>離線使用：直接用瀏覽器開啟此檔即可，不需要網路或伺服器；文件連結會指向 repo 內的相對路徑。</p>
   </footer>
 </div>
 
 <script>
-const REPO_BASE = "https://github.com/newqqo/grad-thesis-toolkit/blob/main/";
-
 const STAGES = [
   {
     id: "no-topic",
@@ -251,23 +250,46 @@ function el(tag, attrs = {}, children = []) {
   return node;
 }
 
+function docHref(relpath) {
+  return relpath.startsWith("docs/") ? relpath.slice("docs/".length) : `../${relpath}`;
+}
+
+async function copyText(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (e) {
+      // Fall through to the textarea fallback used by local file previews.
+    }
+  }
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.setAttribute("readonly", "");
+  ta.style.position = "fixed";
+  ta.style.left = "-9999px";
+  document.body.appendChild(ta);
+  ta.select();
+  let ok = false;
+  try {
+    ok = document.execCommand("copy");
+  } catch (e) {
+    ok = false;
+  }
+  document.body.removeChild(ta);
+  return ok;
+}
+
 function copyButton(getText) {
   const btn = el("button", { class: "copy", type: "button" }, "複製");
   btn.addEventListener("click", async () => {
-    const text = getText();
-    try {
-      await navigator.clipboard.writeText(text);
-    } catch (e) {
-      const ta = document.createElement("textarea");
-      ta.value = text;
-      document.body.appendChild(ta);
-      ta.select();
-      try { document.execCommand("copy"); } catch (_) {}
-      document.body.removeChild(ta);
-    }
-    btn.textContent = "已複製 ✓";
-    btn.classList.add("done");
-    setTimeout(() => { btn.textContent = "複製"; btn.classList.remove("done"); }, 1600);
+    const copied = await copyText(getText());
+    btn.textContent = copied ? "已複製 ✓" : "複製失敗";
+    btn.classList.add(copied ? "done" : "failed");
+    setTimeout(() => {
+      btn.textContent = "複製";
+      btn.classList.remove("done", "failed");
+    }, 1600);
   });
   return btn;
 }
@@ -308,7 +330,7 @@ function renderPanel(stage) {
   docBlock.appendChild(el("div", { class: "label" }, "📄 對應文件"));
   const links = el("div", { class: "doclinks" });
   stage.docs.forEach((d) => {
-    links.appendChild(el("a", { href: REPO_BASE + d.relpath, target: "_blank", rel: "noopener" }, d.label));
+    links.appendChild(el("a", { href: docHref(d.relpath) }, d.label));
   });
   docBlock.appendChild(links);
   panel.appendChild(docBlock);
