@@ -40,7 +40,7 @@ The public [Codex for Open Source](https://developers.openai.com/community/codex
 ## Weak Points
 
 - No public adoption signal yet, such as stars, forks, user feedback, or advisor/student testimonials.
-- No screenshots or short demo video yet (partly mitigated by committed text sample outputs under `docs/sample-outputs/`).
+- No short demo video yet (partly mitigated by committed text sample outputs under `docs/sample-outputs/` and screenshots under `docs/assets/screenshots/`).
 - No school-specific adapter examples yet.
 - The literature-map workflow is scaffolded, not a live academic search engine.
 - The competitor survey is desk research and simulated usability feedback, not adoption proof.
@@ -63,14 +63,14 @@ Avoid this angle:
 - Committed public-safe sample outputs under `docs/sample-outputs/`.
 - Static onboarding wizard under `docs/onboarding.html`.
 - First-30-minute onboarding outcomes, safe/unsafe paste examples, source/evidence registry, and AI usage log scaffolds.
-- Issue templates, contribution guidance, security policy, citation metadata, and public roadmap.
+- Visual proof screenshots under `docs/visual-proof.md`.
+- Issue templates, including a student workflow request template, plus contribution guidance, security policy, citation metadata, and public roadmap.
 - Competitor survey and improvement backlog under `docs/competitor-survey-2026.md`.
 
 ## Next Improvements Before Applying
 
 These remaining items need the maintainer or real users and cannot be produced from code alone:
 
-1. Add screenshots of the literature-map workspace and rendered placeholder DOCX, and one short demo recording or GIF.
+1. Add one short demo recording or GIF that shows the static onboarding page, generated topic workspace, and rendered DOCX artifact.
 2. Collect feedback from at least 3 Taiwan graduate students, advisors, or lab peers to complement the current simulated first-use report.
-3. Add a sample issue showing a student workflow request and how maintainers would handle it.
-4. Add a small visual walkthrough that shows the static onboarding page, the generated topic workspace, and the rendered DOCX artifact.
+3. Open or document one real student workflow request using the public-safe issue template.

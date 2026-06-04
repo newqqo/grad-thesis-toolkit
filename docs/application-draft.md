@@ -59,6 +59,8 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 - a non-PSC AI teaching first-use sample that demonstrates the workflow beyond maritime topics
 - a student-simulation report showing how four first-time user stages shaped the onboarding and adapter design
 - a competitor survey and improvement backlog showing why the project should target workflow orchestration rather than official formatting or live literature search
+- visual proof screenshots for the static onboarding page and traceable first-use workflow
+- a student workflow issue template for public-safe user requests
 - placeholder examples that demonstrate structure without private content
 - documentation for setup, contribution, security, citation, and troubleshooting
 - reproducibility checks for local scripts and generated outputs

@@ -32,7 +32,7 @@ The biggest opportunity is the stage before formatting: students often do not kn
 1. Visual proof: many template projects show screenshots, sample PDFs, or rendered output. This repository still needs stronger visual evidence.
 2. Format confidence: Taiwan LaTeX templates can point to school-aware formats. This project must avoid claiming official compliance, but should still document front-matter adapter patterns.
 3. Literature discovery: tools such as Elicit, Rayyan, Litmaps, ResearchRabbit, Connected Papers, ASReview, and Open Knowledge Maps are better at search, screening, citation graphs, and extraction.
-4. First-click clarity: beginner-facing projects often show one exact first action and one visible result. This repository has improved with `docs/onboarding.html` and first-30-minute checklists, but still needs screenshots or a short visual walkthrough.
+4. First-click clarity: beginner-facing projects often show one exact first action and one visible result. This repository has improved with `docs/onboarding.html`, first-30-minute checklists, and committed screenshots; a short video walkthrough would still help.
 5. Adoption proof: mature projects have visible users, stars, forks, institutional links, or testimonials. This repository currently has simulated first-use feedback, not real student feedback.
 
 ## What This Project Can Defend
@@ -65,6 +65,7 @@ The biggest opportunity is the stage before formatting: students often do not kn
    - screenshot of the onboarding page
    - screenshot of the generated literature-map workspace
    - screenshot or sample image of the rendered placeholder DOCX
+   Current status: onboarding desktop/mobile screenshots are committed under `docs/assets/screenshots/`; a short video or DOCX render visual is still useful.
 3. Add an AI usage log and disclosure template:
    - date
    - tool or agent

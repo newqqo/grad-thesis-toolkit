@@ -121,6 +121,7 @@ grad-thesis-toolkit/
 - [Competitive positioning](docs/competitive-positioning.md)
 - [Competitor survey and improvement backlog](docs/competitor-survey-2026.md)
 - [Codex for OSS fit assessment](docs/codex-oss-fit-assessment.md)
+- [Visual proof](docs/visual-proof.md)
 - [Demo guide](docs/demo.md)
 - [Sample outputs (see what the tool produces)](docs/sample-outputs/README.md)
 - [Privacy review checklist](docs/privacy-review-checklist.md)

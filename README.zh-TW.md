@@ -61,7 +61,8 @@ AI 安全模式：
 12. [12 週初稿衝刺計畫](docs/professional-master-12-week-plan.md)
 13. [指導教授回饋循環](docs/advisor-review-workflow.md)
 14. [競品調查與後續改進清單](docs/competitor-survey-2026.md)
-15. [隱私審查 checklist](docs/privacy-review-checklist.md)
+15. [公開截圖與驗證證據](docs/visual-proof.md)
+16. [隱私審查 checklist](docs/privacy-review-checklist.md)
 
 如果你現在只知道一個關鍵字，例如 `PSC`，先不要急著寫第 1 章。先建立文獻地圖工作區：
 

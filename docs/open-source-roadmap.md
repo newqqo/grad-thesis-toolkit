@@ -28,7 +28,7 @@ This roadmap describes the work needed to make the Graduate Thesis Workflow Tool
 
 ## Phase 3: Contributor Readiness
 
-- Publish contribution guidelines and issue templates. Current status: issue templates are present.
+- Publish contribution guidelines and issue templates. Current status: bug, documentation, feature, and student-workflow issue templates are present.
 - Add a small public demo that runs on placeholder content. Current status: `python scripts/run_demo.py` renders public-safe placeholder content.
 - Maintain the static onboarding wizard and add first-30-minute checklists for each student stage. Current status: present in `docs/onboarding.html`; vague-topic workspaces also generate `first-30-minutes.md`.
 - Add Traditional Chinese examples for topic framing, chapter planning, and advisor feedback.
@@ -44,7 +44,7 @@ This roadmap describes the work needed to make the Graduate Thesis Workflow Tool
 
 - Provide a minimal sample project with placeholder inputs and expected outputs.
 - Provide a Taiwan professional master's starter pack with no private school forms or personal data.
-- Provide screenshots or a short screen recording of the literature-map and DOCX-render demo.
+- Provide screenshots or a short screen recording of the literature-map and DOCX-render demo. Current status: onboarding desktop/mobile screenshots are present; a short recording and DOCX render visual remain useful.
 - Add a source/evidence registry that can track DOI or URL, database/tool, search date, verification status, and supporting quote/page/paragraph. Current status: generated in each new literature-map workspace.
 - Add a sample advisor-feedback loop with placeholder comments, paragraph IDs, before/after revision, and post-revision checks.
 - Document any required runtime assumptions.
