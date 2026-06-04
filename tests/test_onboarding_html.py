@@ -49,6 +49,7 @@ def test_is_static_and_safe(text: str):
     assert "https://github.com" not in lowered, "doc links should work as local relative paths"
     # Privacy notice must be present.
     assert "不會上傳" in text and "不會儲存" in text
+    assert "去識別化" in text and "刪除個資" in text
 
 
 def test_copy_failure_state_is_visible(text: str):
