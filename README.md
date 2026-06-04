@@ -10,6 +10,8 @@ The intended use is agent-assisted: Codex, Claude Code, Gemini CLI, Antigravity,
 
 繁體中文入口: [README.zh-TW.md](README.zh-TW.md)
 
+New here and unsure where to start? Open the static onboarding wizard — pick your stage and get the exact prompt, docs, and optional command. No upload, no server: [docs/onboarding.html](docs/onboarding.html) (open the file in a browser, or serve `docs/` with GitHub Pages).
+
 ## Start By Student Stage
 
 Do not start every student with the same command list. First route the student's current state:
@@ -99,6 +101,7 @@ grad-thesis-toolkit/
 
 ## Project Docs
 
+- [新手導覽 wizard（static onboarding, open in a browser）](docs/onboarding.html)
 - [完整範例：跟著做一遍（runnable end-to-end walkthrough）](docs/walkthrough-end-to-end.zh-TW.md)
 - [First use by student stage](docs/first-use-by-stage.md)
 - [從 0 開始：還沒有題目](docs/start-here-zero-topic.zh-TW.md)
