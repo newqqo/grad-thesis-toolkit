@@ -10,9 +10,7 @@ It is plausible as an application if framed as an underserved public-good workfl
 
 ## Program Fit Signals
 
-The public [Codex for Open Source](https://openai.com/form/codex-for-oss/) page says maintainers of active open-source projects can apply, and reviewers look for repository usage, ecosystem importance, and evidence of active maintenance. It also says projects that do not neatly fit the criteria may still apply if they play an important role in the ecosystem and can explain why.
-
-This project should therefore avoid claiming broad usage. The stronger argument is:
+The public [Codex for Open Source](https://developers.openai.com/community/codex-for-oss) page is intended for maintainers of open-source projects. This project should therefore avoid claiming broad usage. The stronger argument is ecosystem gap plus active maintenance:
 
 - it addresses a real student workflow gap not covered by most thesis format templates,
 - it is public, placeholder-first, and privacy-aware,
@@ -29,6 +27,8 @@ This project should therefore avoid claiming broad usage. The stronger argument 
 - Concept hierarchy and theoretical promise-delivery checks grounded in manuscript sentences.
 - Cross-agent adapters for Codex, Antigravity, Claude Code, and Gemini CLI-style workflows.
 - First-use stage routing based on simulated no-topic, vague-direction, partial-draft, and near-final student journeys.
+- Static onboarding wizard that remains a guide layer: no upload, no backend, no API key, no paid-service dependency.
+- Competitor survey showing that adjacent tools are strong at formatting, literature search, citation maps, or systematic-review screening, while this project targets the missing workflow layer between vague topic and advisor-reviewable DOCX draft.
 - Near-final oral-defense review commands that separate mandatory fixes from optional polish.
 - Non-PSC AI teaching sample that shows the workflow can generalize beyond maritime topics.
 - Stable paragraph IDs and consistency rules for auditable AI edits.
@@ -42,6 +42,7 @@ This project should therefore avoid claiming broad usage. The stronger argument 
 - No screenshots or short demo video yet (partly mitigated by committed text sample outputs under `docs/sample-outputs/`).
 - No school-specific adapter examples yet.
 - The literature-map workflow is scaffolded, not a live academic search engine.
+- The competitor survey is desk research and simulated usability feedback, not adoption proof.
 - It is not an official university thesis format and must not be described as one.
 
 ## Best Application Framing
@@ -59,6 +60,9 @@ Avoid this angle:
 - Repository is published and marked as a GitHub template with descriptive topics.
 - Cross-platform CI (Linux, macOS, Windows) plus a `pytest` suite.
 - Committed public-safe sample outputs under `docs/sample-outputs/`.
+- Static onboarding wizard under `docs/onboarding.html`.
+- Issue templates, contribution guidance, security policy, citation metadata, and public roadmap.
+- Competitor survey and improvement backlog under `docs/competitor-survey-2026.md`.
 
 ## Next Improvements Before Applying
 
@@ -67,3 +71,5 @@ These remaining items need the maintainer or real users and cannot be produced f
 1. Add screenshots of the literature-map workspace and rendered placeholder DOCX, and one short demo recording or GIF.
 2. Collect feedback from at least 3 Taiwan graduate students, advisors, or lab peers to complement the current simulated first-use report.
 3. Add a sample issue showing a student workflow request and how maintainers would handle it.
+4. Add a source/evidence registry and AI usage log template so literature work remains traceable.
+5. Add a first-30-minute onboarding checklist for each student stage.

@@ -22,6 +22,8 @@ Many students begin with only a vague keyword, such as PSC, ESG, AI teaching, or
 
 The workflow is intended for agent use, not just manual Python execution. The repository provides shared rules and platform adapters so different agents can run evidence scripts, read reports, and apply the same thesis-review discipline.
 
+A 2026 competitor survey found that existing resources are strong at thesis formatting, citation maps, or systematic-review screening, but weaker at the middle workflow layer: moving a Taiwan student from topic uncertainty to verified sources, chapter tasks, advisor-facing deliverables, and AI-auditable DOCX revisions.
+
 ## Proposed Solution
 
 This toolkit provides a public, placeholder-first thesis workspace with:
@@ -36,6 +38,7 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 - concept hierarchy and theoretical promise-delivery checks that use manuscript sentences to detect term drift, unsupported high-level concepts, and chapter-level delivery gaps
 - cross-agent adapters for Codex, Antigravity, Claude Code, and Gemini CLI-style workflows
 - first-use stage routing for no-topic, vague-direction, partial-draft, and near-final students
+- a static onboarding wizard that gives each stage a copyable agent prompt, relevant docs, and optional commands without upload, backend, API key, or paid-service dependency
 - near-final oral-defense review guidance that separates mandatory fixes, recommended fixes, optional polish, and defensible oral-defense handling
 - advisor-review workflow guidance for Word/PDF feedback loops
 - style and public-readiness checks
@@ -55,6 +58,7 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 - a public-safe Taiwan professional master's mini sample that demonstrates topic narrowing, matrix setup, gap radar, advisor feedback tracking, and chapter tasks
 - a non-PSC AI teaching first-use sample that demonstrates the workflow beyond maritime topics
 - a student-simulation report showing how four first-time user stages shaped the onboarding and adapter design
+- a competitor survey and improvement backlog showing why the project should target workflow orchestration rather than official formatting or live literature search
 - placeholder examples that demonstrate structure without private content
 - documentation for setup, contribution, security, citation, and troubleshooting
 - reproducibility checks for local scripts and generated outputs
@@ -77,7 +81,7 @@ This toolkit provides a public, placeholder-first thesis workspace with:
 
 ## Project Maturity
 
-The repository is a public candidate at version 0.1.6. The core placeholder workflow runs locally and in CI: public readiness check, agent-adapter validation, style scan, consistency audit, concept hierarchy audit, promise-delivery audit, DOCX template generation, DOCX rendering, literature-map initialization, and outline citation-candidate extraction. The current iteration adds a cross-platform `pytest` suite and expands CI to run unit tests on Linux and Windows plus a workflow smoke test on Linux, macOS, and Windows, proving the toolkit reproduces on any platform without Microsoft Word. The next maturity step is collecting feedback from real Taiwan students and adding screenshots or a short demo recording.
+The repository is a public candidate at version 0.1.7. The core placeholder workflow runs locally and in CI: public readiness check, agent-adapter validation, style scan, consistency audit, concept hierarchy audit, promise-delivery audit, DOCX template generation, DOCX rendering, literature-map initialization, and outline citation-candidate extraction. The current iteration adds a static onboarding wizard, a cross-platform `pytest` suite, and CI that runs unit tests on Linux and Windows plus a workflow smoke test on Linux, macOS, and Windows, proving the toolkit reproduces on any platform without Microsoft Word. The next maturity step is collecting feedback from real Taiwan students and adding screenshots or a short demo recording.
 
 ## Risks and Mitigations
 
@@ -102,5 +106,5 @@ The repository is a public candidate at version 0.1.6. The core placeholder work
 
 - Repository URL: `https://github.com/newqqo/grad-thesis-toolkit`
 - License: MIT
-- Current release: 0.1.6 tests and cross-platform reproducibility
+- Current release: 0.1.7 static onboarding wizard
 - Public demo: `python scripts/run_demo.py`

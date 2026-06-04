@@ -119,6 +119,7 @@ grad-thesis-toolkit/
 - [12 週初稿衝刺計畫](docs/professional-master-12-week-plan.md)
 - [指導教授回饋循環](docs/advisor-review-workflow.md)
 - [Competitive positioning](docs/competitive-positioning.md)
+- [Competitor survey and improvement backlog](docs/competitor-survey-2026.md)
 - [Codex for OSS fit assessment](docs/codex-oss-fit-assessment.md)
 - [Demo guide](docs/demo.md)
 - [Sample outputs (see what the tool produces)](docs/sample-outputs/README.md)
