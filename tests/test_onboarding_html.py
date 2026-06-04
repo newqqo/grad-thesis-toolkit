@@ -71,7 +71,12 @@ def test_accessibility_features_present(text: str):
     assert "prefers-reduced-motion" in text, "needs a reduced-motion accommodation"
     assert "prefers-color-scheme" in text, "needs a light-mode accommodation"
     assert "aria-controls" in text, "stage cards should reference the panel"
-    assert "panel.focus(" in text, "focus should move into the panel after selection"
+    assert "focusPanel(panel)" in text, "focus should move into the panel after selection"
+    assert "panel.focus({ preventScroll: true })" in text
+    assert "catch (e)" in text and "panel.focus()" in text, "focus options need a fallback"
+    assert "--danger: #b91c1c" in text, "light mode needs a high-contrast danger color"
+    assert ".avoid { color: var(--danger); }" in text
+    assert ".example.unsafe strong { color: var(--danger); }" in text
 
 
 def test_no_private_trigger_strings(text: str):

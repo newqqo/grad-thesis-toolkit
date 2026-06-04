@@ -14,6 +14,10 @@ Mobile view:
 
 ![Mobile onboarding screenshot](assets/screenshots/onboarding-v0.1.8-mobile.png)
 
+Light-mode accessibility view:
+
+![Light-mode onboarding screenshot](assets/screenshots/onboarding-v0.1.9-light.png)
+
 The screenshots show the "vague direction" student path with:
 
 - first-30-minute outcomes
@@ -21,6 +25,8 @@ The screenshots show the "vague direction" student path with:
 - copyable agent prompt
 - optional local command
 - links to matching repository docs
+- keyboard/screen-reader focus landing on the answer panel
+- light-mode contrast for safe/unsafe and "do not do this yet" guidance
 
 ## Public Demo Outputs
 
@@ -40,18 +46,18 @@ It produces:
 - `consistency/reports/promise_delivery_report.md`
 - `deliverables/docx/thesis_render_v2_latest.docx`
 
-The v0.1.8 release also includes a public placeholder DOCX artifact:
+The v0.1.9 release also includes a public placeholder DOCX artifact:
 
-- [v0.1.8 Traceable Literature Intake](https://github.com/newqqo/grad-thesis-toolkit/releases/tag/v0.1.8)
+- [v0.1.9 Onboarding Accessibility](https://github.com/newqqo/grad-thesis-toolkit/releases/tag/v0.1.9)
 
 ## Verification
 
-The latest local verification for v0.1.8:
+The latest local verification for v0.1.9:
 
-- `python -m pytest -q`: 45 tests passed
+- `python -m pytest -q`: 49 tests passed
 - `python scripts/check_public_readiness.py`: passed
 - `python scripts/check_agent_adapters.py`: passed
 - `python scripts/run_demo.py`: passed
-- onboarding browser smoke check: desktop and mobile screenshots captured; console clean after favicon fix
+- onboarding browser smoke check: answer-panel focus handoff verified; console clean; light-mode screenshot captured
 
 The repository also runs cross-platform GitHub Actions on Linux, macOS, and Windows.
