@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.7 - Static Onboarding Wizard
+
+- Added `docs/onboarding.html`: a single-file, framework-free static onboarding layer. A first-time student picks one of four stages (no topic, vague direction, partial draft, near final) and gets the prompt to paste into their own AI agent, the matching repo docs, an optional Python command, and an explicit "do not do this yet" list — with copy buttons. It is intentionally a navigation layer, not a web app: no upload, no backend, no network calls; open the file directly or serve `docs/` with GitHub Pages.
+- Added `tests/test_onboarding_html.py` verifying every doc link resolves to a real repo file, all four stages are present, and the page stays static and safe (no form, no file input, no network call, privacy notice present).
+- Linked the wizard from both READMEs.
+
 ## 0.1.6 - Tests And Cross-Platform Reproducibility
 
 - Added a `pytest` test suite under `tests/` covering citation-candidate extraction, the public-readiness privacy scan, agent-adapter integrity, concept-audit primitives, consistency/style helpers, and an end-to-end DOCX render smoke test.

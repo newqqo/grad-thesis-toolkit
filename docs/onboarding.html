@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>論文工具新手導覽 · Graduate Thesis Toolkit</title>
+<meta name="description" content="台灣碩士生第一次使用的導覽：先選你現在的狀態，拿到要貼給 AI 的 prompt、對應文件與可選指令。不上傳、不儲存任何內容。" />
+<style>
+  :root {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --panel-2: #273449;
+    --ink: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent-ink: #04222e;
+    --warn-bg: #422006;
+    --warn-ink: #fcd34d;
+    --ok: #34d399;
+    --border: #334155;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px 18px 64px; }
+  header h1 { font-size: 1.5rem; margin: 8px 0 6px; }
+  header p.lead { color: var(--muted); margin: 0 0 4px; }
+  a { color: var(--accent); }
+  .privacy {
+    margin: 18px 0 22px;
+    background: var(--warn-bg);
+    color: var(--warn-ink);
+    border: 1px solid #854d0e;
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+  .privacy strong { color: #fde68a; }
+  h2.section { font-size: 1.05rem; color: var(--muted); margin: 26px 0 12px; font-weight: 600; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    cursor: pointer;
+    text-align: left;
+    color: var(--ink);
+    font: inherit;
+    transition: border-color .15s, transform .15s;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card[aria-expanded="true"] { border-color: var(--accent); }
+  .card .badge { font-size: 0.8rem; color: var(--accent); }
+  .card h3 { margin: 6px 0 4px; font-size: 1.08rem; }
+  .card p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+  .panel {
+    margin-top: 14px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+    display: none;
+  }
+  .panel.open { display: block; }
+  .panel h3 { margin: 0 0 2px; font-size: 1.2rem; }
+  .panel .sub { color: var(--muted); margin: 0 0 14px; }
+  .block { margin: 16px 0; }
+  .block > .label { font-weight: 700; font-size: 0.95rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+  ul.clean { margin: 6px 0; padding-left: 20px; }
+  ul.clean li { margin: 3px 0; }
+  .codebox { position: relative; }
+  pre {
+    background: #0b1220;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 14px;
+    overflow-x: auto;
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 0.9rem;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    color: #d6e2f5;
+  }
+  .copy {
+    margin-top: 8px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    border: none;
+    border-radius: 8px;
+    padding: 7px 14px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .copy:active { transform: translateY(1px); }
+  .copy.done { background: var(--ok); }
+  .copy.failed { background: #f87171; color: #2b0707; }
+  .doclinks { display: flex; flex-wrap: wrap; gap: 8px; }
+  .doclinks a {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.88rem;
+    text-decoration: none;
+  }
+  .avoid { color: #fca5a5; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 16px; }
+  footer code { background: #0b1220; padding: 1px 6px; border-radius: 5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="lead">Graduate Thesis Toolkit · 新手導覽</p>
+    <h1>你現在卡在哪一步？先選一個，再拿到下一步該做什麼。</h1>
+    <p class="lead">這頁會幫你選出下一步：複製哪段提示詞、準備哪些去識別化內容、需要時再看哪份文件。會用 Python 的人，也可以加跑本機檢查。</p>
+  </header>
+
+  <div class="privacy">
+    🔒 <strong>隱私第一</strong>：這頁是純靜態導覽，<strong>不會上傳、不會儲存</strong>任何東西。請<strong>不要</strong>把你的真實論文、訪談逐字稿、個資貼進任何公開網站或公開程式碼倉庫。要請 AI 協助時，先用去識別化摘要、章節大綱或刪除個資後的短段落。
+  </div>
+
+  <h2 class="section">① 選擇你現在的狀態</h2>
+  <div class="cards" id="cards"></div>
+
+  <div class="panel" id="panel" aria-live="polite"></div>
+
+  <footer>
+    <p>這份導覽不是學校格式產生器，也不是代寫工具。它只幫你先選對下一步；更完整的範例見
+    <a href="walkthrough-end-to-end.zh-TW.md">walkthrough-end-to-end.zh-TW.md</a>。</p>
+    <p>離線使用：直接用瀏覽器開啟此檔即可，不需要網路或伺服器；文件連結會指向 repo 內的相對路徑。</p>
+  </footer>
+</div>
+
+<script>
+const STAGES = [
+  {
+    id: "no-topic",
+    badge: "A",
+    title: "完全還沒題目",
+    teaser: "只想開始，但不知道要寫什麼。",
+    summary: "先讓 AI 訪談你，而不是讓它直接生一個假題目。",
+    next: [
+      "先準備：你的工作/實務經驗、能取得的資料、指導教授偏好、時間限制、可接受的方法。",
+      "讓 AI 用問題訪談你，最後給你幾個「可行、做得到、老師可能接受」的方向。",
+    ],
+    prompt: "我是台灣碩士生，還沒有論文題目。請先不要幫我想題目，改成用 8-10 個問題訪談我：我的工作或實務經驗、我能取得的資料、指導教授偏好的方法、我的時間限制、可接受的研究方法。問完後，給我 3-5 個可行研究方向，每個附上風險與下一步，並全部標示為『待確認，需與指導教授討論』。不要編造文獻或數據。",
+    docs: [
+      { label: "從 0 開始：還沒有題目", relpath: "docs/start-here-zero-topic.zh-TW.md" },
+      { label: "台灣碩專班從 0 開始指南", relpath: "docs/taiwan-zero-start-guide.md" },
+      { label: "第一次使用分流", relpath: "docs/first-use-by-stage.md" },
+    ],
+    command: "",
+    avoid: [
+      "不要急著定一個題目。",
+      "不要讓 AI 直接生出一個聽起來很厲害但你做不到的題目與假文獻。",
+    ],
+  },
+  {
+    id: "vague",
+    badge: "B",
+    title: "只有模糊方向",
+    teaser: "知道關鍵字（PSC / ESG / AI 教學…），但還很模糊。",
+    summary: "建立文獻地圖：種子論文、研究叢集、缺口、可行資料。",
+    next: [
+      "把關鍵字變成可搜尋的種子論文與研究叢集。",
+      "找出國內外研究缺口，決定你能站在哪裡，再整理見老師要問的問題。",
+    ],
+    prompt: "我想做的方向是「（在這裡填你的關鍵字，例如 PSC / ESG / AI 教學 / 數位轉型）」，但還很模糊。請幫我規劃：種子論文搜尋邏輯、可能的研究叢集、國內外研究缺口、可行的資料與方法，以及見指導教授前要問的問題。所有論文建議都標示為『未驗證候選』，不要編造文獻、作者或 DOI。",
+    docs: [
+      { label: "從模糊題目到文獻地圖", relpath: "docs/vague-topic-to-literature-map.md" },
+      { label: "PSC 文獻地圖示例", relpath: "docs/psc-literature-map-example.md" },
+      { label: "AI 研究夥伴 Playbook", relpath: "docs/research-partner-playbook.md" },
+    ],
+    command: 'python scripts/init_literature_map.py --topic "你的關鍵字" --domain-hint "你的領域提示"',
+    avoid: [
+      "不要直接開始寫第 2 章。",
+      "不要把 AI 生成的文獻清單當成已驗證——先逐筆查證。",
+    ],
+  },
+  {
+    id: "partial",
+    badge: "C",
+    title: "已有大綱／寫到一半",
+    teaser: "有大綱或第 1-3 章草稿。",
+    summary: "先抓引用候選＋做概念/承諾檢查，不要全文改寫。",
+    next: [
+      "先找出需要查證的引用，標為未驗證。",
+      "檢查概念位階是否漂移；第 1 章的理論在第 2/4/5 章有沒有被支撐、操作、回收。",
+      "拿到最小改動的修正建議，而不是整章重寫。",
+    ],
+    prompt: "我已經有大綱或部分章節草稿。請先不要全文改寫。我會只提供去識別化後的大綱、章節摘要或短段落。請依序：(1) 找出可能需要查證的引用並標為『未驗證』；(2) 檢查我的概念位階是否漂移（上位場域／分析單位／操作工具）；(3) 檢查第 1 章提出的理論，第 2 章有沒有支撐、第 4 章有沒有真的操作、第 5 章有沒有回收。請回給我最小改動的修正建議，每一項都附上我的原句或章節依據。",
+    docs: [
+      { label: "大綱匯入流程", relpath: "docs/outline-intake-workflow.md" },
+      { label: "概念階層與理論交付檢查", relpath: "docs/concept-hierarchy-and-promise-check.md" },
+      { label: "完整範例：跟著做一遍", relpath: "docs/walkthrough-end-to-end.zh-TW.md" },
+    ],
+    command: "python scripts/extract_citation_candidates.py --input examples/outline-with-citations.md",
+    avoid: [
+      "不要讓 AI 一次重寫整章。",
+      "不要在還沒驗證的引用上擴張論述。",
+    ],
+  },
+  {
+    id: "near-final",
+    badge: "D",
+    title: "接近完稿",
+    teaser: "有第 1-5 章，快口試或快繳交。",
+    summary: "口試前嚴格審查，分『必修／建議／可不修／可現場說明』。",
+    next: [
+      "聚焦會在口試被打的點：沒被支撐的概念、沒被操作的框架、結論過度宣稱、引用與隱私風險。",
+      "把問題分級，不要全部一視同仁。",
+      "如果要貼給 AI，先用去識別化摘要或短段落；公開前再做一次隱私檢查。",
+    ],
+    prompt: "我接近完稿，有第 1-5 章。請以嚴格口試委員角度審查，聚焦會被打的地方：沒被支撐的概念、沒被操作的框架、結論過度宣稱、引用風險、隱私/公開風險。請把結果分成四類：必修、建議修、可不修、可在口試現場用說明處理。每一項都附上章節或段落依據，不要客套帶過。",
+    docs: [
+      { label: "完整範例：跟著做一遍", relpath: "docs/walkthrough-end-to-end.zh-TW.md" },
+      { label: "指導教授回饋循環", relpath: "docs/advisor-review-workflow.md" },
+      { label: "隱私審查 checklist", relpath: "docs/privacy-review-checklist.md" },
+    ],
+    command: "python scripts/manuscript_concept_audit.py all --source source/shadow",
+    avoid: [
+      "不要只看 demo 報告就當作完成審查。",
+      "不要把私人草稿、訪談或個資放進公開 repo。",
+    ],
+  },
+];
+
+function el(tag, attrs = {}, children = []) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") node.className = v;
+    else if (k === "html") node.innerHTML = v;
+    else node.setAttribute(k, v);
+  }
+  for (const c of [].concat(children)) {
+    node.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
+  }
+  return node;
+}
+
+function docHref(relpath) {
+  return relpath.startsWith("docs/") ? relpath.slice("docs/".length) : `../${relpath}`;
+}
+
+async function copyText(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (e) {
+      // Fall through to the textarea fallback used by local file previews.
+    }
+  }
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.setAttribute("readonly", "");
+  ta.style.position = "fixed";
+  ta.style.left = "-9999px";
+  document.body.appendChild(ta);
+  ta.select();
+  let ok = false;
+  try {
+    ok = document.execCommand("copy");
+  } catch (e) {
+    ok = false;
+  }
+  document.body.removeChild(ta);
+  return ok;
+}
+
+function copyButton(getText) {
+  const btn = el("button", { class: "copy", type: "button" }, "複製");
+  btn.addEventListener("click", async () => {
+    const copied = await copyText(getText());
+    btn.textContent = copied ? "已複製 ✓" : "複製失敗";
+    btn.classList.add(copied ? "done" : "failed");
+    setTimeout(() => {
+      btn.textContent = "複製";
+      btn.classList.remove("done", "failed");
+    }, 1600);
+  });
+  return btn;
+}
+
+function renderPanel(stage) {
+  const panel = document.getElementById("panel");
+  panel.innerHTML = "";
+
+  panel.appendChild(el("h3", {}, `${stage.title}`));
+  panel.appendChild(el("p", { class: "sub" }, stage.summary));
+
+  // Next steps
+  const nextBlock = el("div", { class: "block" });
+  nextBlock.appendChild(el("div", { class: "label" }, "下一步要做什麼"));
+  const ul = el("ul", { class: "clean" });
+  stage.next.forEach((t) => ul.appendChild(el("li", {}, t)));
+  nextBlock.appendChild(ul);
+  panel.appendChild(nextBlock);
+
+  // Prompt
+  const promptBlock = el("div", { class: "block codebox" });
+  promptBlock.appendChild(el("div", { class: "label" }, "📋 貼給你的 AI 助理（Codex / Claude / Gemini）"));
+  promptBlock.appendChild(el("pre", {}, stage.prompt));
+  promptBlock.appendChild(copyButton(() => stage.prompt));
+  panel.appendChild(promptBlock);
+
+  // Optional command
+  if (stage.command) {
+    const cmdBlock = el("div", { class: "block codebox" });
+    cmdBlock.appendChild(el("div", { class: "label" }, "⌨️ 可選：本機檢查指令（需要 Python，跨平台）"));
+    cmdBlock.appendChild(el("pre", {}, stage.command));
+    cmdBlock.appendChild(copyButton(() => stage.command));
+    panel.appendChild(cmdBlock);
+  }
+
+  // Docs
+  const docBlock = el("div", { class: "block" });
+  docBlock.appendChild(el("div", { class: "label" }, "📄 對應文件"));
+  const links = el("div", { class: "doclinks" });
+  stage.docs.forEach((d) => {
+    links.appendChild(el("a", { href: docHref(d.relpath) }, d.label));
+  });
+  docBlock.appendChild(links);
+  panel.appendChild(docBlock);
+
+  // Avoid
+  const avoidBlock = el("div", { class: "block" });
+  avoidBlock.appendChild(el("div", { class: "label avoid" }, "🚫 現在先不要做"));
+  const ul2 = el("ul", { class: "clean avoid" });
+  stage.avoid.forEach((t) => ul2.appendChild(el("li", {}, t)));
+  avoidBlock.appendChild(ul2);
+  panel.appendChild(avoidBlock);
+
+  panel.classList.add("open");
+  panel.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function init() {
+  const cards = document.getElementById("cards");
+  STAGES.forEach((stage) => {
+    const card = el("button", { class: "card", type: "button", "aria-expanded": "false", "data-id": stage.id }, [
+      el("div", { class: "badge" }, `路徑 ${stage.badge}`),
+      el("h3", {}, stage.title),
+      el("p", {}, stage.teaser),
+    ]);
+    card.addEventListener("click", () => {
+      document.querySelectorAll(".card").forEach((c) => c.setAttribute("aria-expanded", "false"));
+      card.setAttribute("aria-expanded", "true");
+      renderPanel(stage);
+    });
+    cards.appendChild(card);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", init);
+</script>
+</body>
+</html>

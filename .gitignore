@@ -36,6 +36,7 @@ source/front_matter/*.docx
 !consistency/reports/.gitkeep
 
 # Local/editor files
+.claude/launch.json
 .vscode/
 .idea/
 .DS_Store
